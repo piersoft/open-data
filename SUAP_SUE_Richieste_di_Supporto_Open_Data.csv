@@ -2412,7 +2412,7 @@ Se sì, entro quando diventerà ufficiale? Se no, entro quando diventerà uffici
 
 Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
 Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
-";0
+";n.a.
 161;dc589d827810416d88143c6bfc729c3d;"Dalla riunione del 21/02/2025 della “Community SUAP SUE - Catalogo SSU incontri con le Regioni” sono emerse chiaramente delle problematiche delle specifiche tecniche per le quali chiedo come poterci adeguare anche considerando sia la scadenza a breve sia la necessità di non uscire dalle specifiche tecniche per garantire l’interoperabilità.
 Alcune soluzioni che ci erano state prospettate riuscivano ad aggirare i problemi ma da quanto è emerso non andrebbero bene perché precludono l’interoperabilità, come dobbiamo comportarci per queste problematiche?
 Le attuali specifiche tecniche in base a quanto emerso dalla riunione non consentono al sistema di funzionare correttamente.
@@ -3626,7 +3626,7 @@ All'interno dell'Instance-Descriptor ci saranno le tre fattispecie selezionate, 
 In conclusione, partendo dal procedimento amministrativo  ""Comunicazione di subingresso in esercizio di vendita in spacci interni"" l'operatore può attivare una fattispecie primaria e le due fattispecie secondarie ad esso collegate. Riconducendo i regimi amministrativi a livello di fattispecie viene permesso al sistema la corretta gestione dei sottoprocedimenti attivati mediante i regimi che li competono: COMUNICAZIONE e SCIA.
 
 Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
-Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";0
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
 211;1775044ca75f4d05a6e3039e366aaefd;"	
 la data indicata nell'oggetto cdss_convocation
 dentro CdssNotifyMessage nel servizio /notify esposto da ET verso il BO,
@@ -3634,7 +3634,7 @@ dentro CdssNotifyMessage nel servizio /notify esposto da ET verso il BO,
 dentro l'InstanceDescriptor tornato dal servizio /instance_descriptor/{cui_uuid} esposto dal Catalogo agli ET?";"Si, la data riportata nel servizio notify riporta la medesima data della ""date_cdss"" presente nel campo Times. Nel servizio notify tale informazione viene riportata al fine di reindirizzarla fino al soggetto presentatore che dovrà provvedere a rispondere entro tale data.
 
 Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
-Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";0
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
 212;7f616dcdfa7c4a39a2e37cde6c4d1c36;Nel caso in cui in un procedimento siano presenti più fattispecie, quindi una principale e una o più secondarie, è previsto un modo per discriminare gli allegati di ciascuna fattispecie?;"Gli attachment associati ad una fattispecie possono essere recuperati in diversi modi:
   - consultando l'Instance-Descriptor: è possibile verificare nell'attributo ""usecase-proceedings"" tutte le fattispecie di un procedimento SUAP e per ogni oggetto vengono riportati gli eventuali allegati nell'attributo ""attachemnts"";
    - consultando le API del Catalogo:
@@ -3642,11 +3642,11 @@ Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente tick
            - recupero bulk degli attachment di un procedimento chiamando il seguente path ""/proceedings-attachments/{id_proceeding_list}"". Il presente servizio riporta tutti gli allegati, per ogni singola versione, associati ad una lista di procedimenti.
 
 Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
-Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";0
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
 213;fd8b3a9b99524cf3b79090ba5d73558f;Nel caso in cui in un procedimento siano presenti più fattispecie, quindi una principale e una o più secondarie, è previsto un modo per discriminare quale sia la primaria?;"Per recuperare la lista delle fattispecie primarie e secondarie, è possibile recuperare la lista degli identificativi delle fattispecie consultando l'Instance-Descriptor. Presi questi id, è possibile invocare il servizio del Catalogo-meta ""/usecase-proceedings-endoproceedings/{id_usecase_proceeding_list}"", il quale riporterà la fattispecie primaria, le eventuali fattispecie secondarie e la loro relativa obbligatorietà.
 
 Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
-Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";0
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
 214;cabfe290851c4a6180aefe1145780774;"vi chiediamo un chiarimento sul sequence diagram ""DomandaAutorizzazione"" (https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/approved02/sequence-diagram/DomandaAutorizzazione-001.mermaid) ai passi 72 e 78, e analogamente sul sequence diagram ""SCIA"" ai passi 52 e 58.
 Il dubbio è il seguente e collegato al caso in cui un'istanza contenga più di un procedimento di competenza dello stesso Ente Terzo.
 A parità di istanza e ente terzo è previsto che l'azione ""send_conclusions"" sia una e una sola o una per procedimento di competenza dell'Ente Terzo? Il dubbio nasce dal ""par"" che contiene l'azione ma non essendoci un commento non ci è chiaro se sia da intendersi lato Backoffice suap ""per ogni Ente Terzo coinvolto"", oppure lato Ente Terzo ""per ogni procedimento di competenza dell'Ente Terzo"".";"Si precisa che il ""par"" nei passi indicati è da intendersi ""per ogni ente terzo interessato"" come indicato nel blocco precedente al passo 44 del sequence diagram SCIA e 64 dell'AUTORIZZAZIONE. 
@@ -4646,6 +4646,29 @@ La  segnalazione è stata risolta durante un incontro dedicato, pertanto, viene 
 338;e6d2c6623b484443b47e61cc6b87a667;VI chiediamo un chiarimento sull'istance descriptor. Ci sembra che nel caso di integrazioni o correzioni l'instance descriptor che ha il catalogossu possa non essere agggiornato. Per esempio per i file sostituiti in fase di correzione o integrazione l'hash (e forse anche il nome del file) cambia rispetto alla versione iniziale. Chi tiene allineato l'instance descriptor relativamente ai contenuti dell'istanza? Il catalogoSSU prevede di aggiornare anche i riferimenti ai contenuti?;"Sono in corso delle analisi di impatto per quanto riguarda l'integrazione e la conformazione dei documenti. Si precisa che attualmente non è possibile aggiornare l'InstanceDescriptor e l'integrazione può essere condotta come un aggiornamento di un documento già presentato modificando le metainformazioni trasportate mediante l'InstanceIndex.
 
 La  segnalazione è stata risolta durante un incontro dedicato, pertanto, viene chiusa direttamente con la presente risposta.";n.a.
+339;b524f1156fcb4b61a96429f90f763ce1;"
+Nel sequence diagram autorizzativo, è previsto il blocco ""CdSS da SUAP"", in cui il SUAP di propria iniziativa (ovvero senza la richiesta da un Ente Terzo) convoca la conferenza di servizi.
+Quale potrebbe essere il caso reale?
+
+La convocazione è inoltrata a tutti gli Enti Terzi ma a questi non è mai stata inviata l'istanza.
+E' corretto?";"La convocazione della conferenza dei servizi può essere indetta dal SUAP durante la sua fase di controllo delle istanze, dove constata immediatamente delle peculiarità che possono essere risolte prontamente durante la conferenza dei servizi. 
+L'inoltro dei documenti verrà gestito nella convocazione o durante l'incontro stesso. Le Specifiche Tecniche non normano il flusso di gestione della conferenza dei servizi, pertanto, non sono presenti le operation per consentire l'inoltro documentale.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";"Richiedente
+riteniamo che così come implementato nelle specifiche il flusso non sia corretto o sia confusionario.
+Se un endo-procedimento è di competenza di un Ente Terzo, l'istanza dovrebbe sempre essere mandata all'Ente di competenza. Questo, però, non si verificherebbe nel caso di convocazione di cds da parte del SUAP. Stando alle specifiche, in questo flusso, l'Ente Terzo potrebbe non ricevere mai l'istanza e, paradossalmente, il flusso sarebbe corretto. Inoltre, si va a complicare il flusso (non normato dalle specifiche) di gestione della conferenza di servizi in quanto:
+Se la cds è richiesta da un Ente Terzo, il suap deve convocarla SENZA mandare l'istanza ai vari soggetti, dato che questa era già stata preventivamente inoltrata
+Se la cds NON è richiesta da un Ente Terzo ma viene indetta spontaneamente dal SUAP, allora nel flusso stesso della cds bisognerebbe prevedere l'inoltro dell'istanza agli Enti Terzi, il condizionale è d'obbligo proprio perché non previsto dalle specifiche
+Troviamo la cosa piuttosto contorta e, soprattutto, potrebbe portare alla situazione anomala di Enti Terzi che non ricevono istanze di propria competenza.
+Si chiede, pertanto, se le nostre posizioni sono condivisibili o se ci sta sfuggendo qualcosa.
+Qualora fossero condivise, si pensa di adeguare le specifiche?
+Se si optasse per adeguare le specifiche, noi come dovremmo comportarci? Implementiamo adesso un flusso che sappiamo che verrà modificato a breve? Non stiamo parlando di piccoli dettagli.
+
+Operatore
+Si precisa che qualora sia un Ente Terzo a richiedere la conferenza, questo ha già ricevuto le istanze e la richiesta viene inviata durante le sue istrottorie. 
+Differentemente, se il SUAP ritiene di convocare prontamente la conferenza di servizi può farlo prima dell'avvio delle istruttorie, coinvolgendo gli Enti Terzi che riceveranno le istanze e le modalità di recupero delle stesse durante la conferenza o nella sua convocazione. 
+Il presente flusso implementato tiene conto delle analisi condotte durante i tavoli di lavoro che ha coinvolto un gruppo di esperti amministrativi oltre a quelli tecnici. Pertanto, le attuali Specifiche Tecniche sono basate su tali analisi amministrative pregresse. Eventuali aggiornamenti di tale ambito devono essere in caso gestite da un gruppo esperto in materia. Il supporto erogato dalla presente piattaforma invece è puramente tecnico e quindi limitato a chiarire eventuali dubbi o incomprensioni circa il flusso e la sua implementazione."
 340;c18111c9d2494ce6a27063c296df17d6;"la struttura dati (schema ER) prevede la relazione tra una fattispecie principale ed una secondaria, ovvero tra un procedimento principale ed un possibile endoprocedimento.
 Tale relazione è pensata solo per una sorta di facilitazione per l'utente che deve presentare la domanda? Ovvero è una sorta di indicazioni su quali potrebbero essere ulteriori procedimenti da presentare, senza costituire un obbligo e senza dare un'indicazione esaustiva di tutti i procedimenti presentabili contestualmente?
 
@@ -4675,6 +4698,140 @@ Consideriamo che questo comporti una criticità e interventi manuali a carico de
 E' previsto che un ET risponde per ogni fattispecie su cui è coinvolto. Nel presente branch approved01 non è previsto il riferimento alla fattispecie per cui è stata inviata la risposta e sono previsti degli adeguamenti in merito. Tuttavia, è possibile indicare la fattispecie di riferimento all'interno del documento delle conclusioni che viene inviato al BO.
 
 Un ET può mandare più send_conclusion, una per ogni fattispecie come indicato nella risposta da noi formulata. La soluzione proposta è orientata a risolvere una configurazione attualmente in essere, prevedendo l'indicazione della fattispecie direttamente nel documento. Si precisa che è stata aperta una issue al fine di gestire tale problematica nel branch approved02.";n.a.
+347;d566642570fa4b75a4365d16f3408581;"Come fornitore di Ente Terzo di Regione XXX stiamo creando il servizio ""send_istance"", una volta che il servizio di produzione sarà pubblicato su PDND, se abbiamo ben compreso ogni singolo BO SUAP dovrà accreditarsi al nostro servizio send_istance, e quindi chiamarci con client-id e purpose-id loro forniti. Confermate?
+Sempre in merito ai servizi da pubblicare da parte di ENTE TERZO Regione XXX per SSU, dovremo lasciare sempre attivi dei servizi di test per permettere agli sviluppatori dei BO SUAP di effettuare una prova di send_istance ? in questo caso le url dei servizi di test dove verranno pubblicate?";"Si conferma che una volta erogati i servizi della componente ET sulla PDND, le componenti BO che dovranno dialogare con questa componente dovranno effettuare le richieste di fruizione che staccherà i relativi client-id e purpose-id che saranno usati per le chiamate al servizio richiesto.
+
+Per quanto riguarda la componente in ambiente di test, si precisa che la componenete ET soggetta ai test dovrà dialogare solamente con la piattaforma di test e non sono previsti test di integrazione con gli altri componenti BO SUAP.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+348;7a12899eb5544a41859eda7cb6d7f6e4;"In merito al versionamento di un procedimento da caricare su catalogo SSU, nel caso specifico la Regione XXX sta operandosi per produrre xsd idoneo per la VINCA (Valutazione Incidenza) secondo le specifiche tecniche DPR-160-2010 (https://github.com/AgID/specifiche-tecniche-DPR-160-2010), avremmo bisogno di vedere dei moduli di procedimenti versionati da poter analizzare.
+Abbiamo individuato a questa url su github alcuni moduli: https://github.com/AgID/suap-gt-specifiche/tree/to_moduli_dev; volevamo accertarci che possano essere utilizzati questi come esempi o se esista invece altro repository da utilizzare e a cui fare riferimento.";"Si precisa che AgID non ha più competenza sugli schemi XSD, pertanto, si rimanda al tavolo della semplificazione in qualità di soggetto preposto alla formalizzazione della modulistica standardizzata.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+349;c019e6fbc4b841c29a254e0bef57d60e;"Apposizione firma da inserire su documenti prodotti da Ente Terzo BO esempio per firma su documento di cui alla send_conclusions(cui, instance_descriptor_version,positive_outcome,resource_id)
+Che tipo di firma dobbiamo prevedere?
+Una firma di un funzionario del singolo ente (nel nostro caso la conclusione può essere firmata da ente di gestione parco di livello nazionale o regionale) ?
+La domanda nasce dal fatto che il sistema di firma utilizzato in Regione XXX - Dosign - prevede che possano firmare i soli funzionari dotati di certificato rilasciato in ambito regionale, che diventa un vincolo per enti gestori parco di livello nazionale che non hanno quel tipo di certificato.
+La soluzione alternativa sarebbe invece che la firma finale apposta al documento fosse di tipo applicativo - signature / firma di sigillo - che verrebbe ad essere una firma di un responsabile regionale che varrebbe come firma unica per tutto il sistema Ente Terzo BO Regione XXX. Fatto salvo che tutte i dati di chi effettivamente rilascia il parere saranno presenti in chiaro sul documento poi firmato applicativamente.
+Vale la stessa considerazione anche per la firma sulla richiesta di integrazioni.";"La firma digitale prevista dalle attuali Specifiche Tecniche è la PADES e XADES a seconda del formato del documento, a cui verrà integrata la firma CADES nell'approved02 per cui è stata previsto anche il formato p7m per i documenti. Non vi sono indicazioni circa il responsabile che dovrà apporre la firma sui documenti gestiti dalla componente, resta pertanto una scelta amministrativa interna.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+350;76969cf524104b0c9199f65d0207d526;"Ci sono numerosi errori all'interno delle openAPI. Come dobbiamo comportarci?
+
+Faccio un paio di esempio:
+- viene usato mandatary al posto di mandatory. Mandatary non esiste in inglese e, comunque, mandatario (agente, in inglese ""agent"") non c'entra nulla con mandatorio (obbligatorio) che è il termine che, a senso, si voleva usare. Questa proprietà verrà corretta? Se sì quando?
+
+- ci sono vincoli che non possono essere soddisfatti, seguendo le specifiche tecniche dovrei rifiutare tutte le risposte che mi vengono fornite (faccio un esempio: tuple di risposta del FO SUAP dove dovrei controllare che sia presente la proprietà competent_administration ma come proprietà disponibili ho solo primary e fo_system). Come dobbiamo comportarci? Omettiamo i controlli e andiamo contro le specifiche tecniche? Questi errori saranno corretti tutti in approved02?
+
+Allego dettaglio della risposta presa da https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/approved01/openAPI/catalogo-ssu_meta.yaml
+
+responses:
+""200"":
+description: Elenco tuple {SUAP,sistema FrontOffice SUAP} richiesto
+content:
+application/json:
+schema:
+type: array
+items:
+type: object
+required:
+- competent_administration
+- fo_system
+properties:
+primary:
+$ref: ""#/components/schemas/ComponentEntity""
+fo_system:
+$ref: ""#/components/schemas/FOSystemEntity""";"Si precisa che gli errori indicati nella segnalazione sono tutti errori di digitazione e sono stati risolti nel branch di lavoro previsto per l'approved02. 
+Per quanto riguarda l'approccio da adottare per gestire tali problematiche durante lo sviluppo del branch l'approved01, la invitiamo a chiedere dettagli al Dipartimento della Funzione Pubblica poichè si tratta di una scelta amministrativa.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";"Richiedente
+Quindi mi confermate che fra approved01 e approved02 cambieranno le proprietà (e i controlli) e dovremo adattare i programmi in un secondo momento?
+
+Operatore
+Come indicato nella prima risposta, qualora si dovessero riscontrare errori di questa natura che sono stati già corretti in approved02, si consiglia di attuare tali migliorie fin da subito"
+351;6d90a530363a4916834005df205d7713;"la nostra azienda XXX fornisce software per tutti gli uffici di Comuni ed Unioni di Comuni ed è direttamente coinvolta nello sviluppo previsto dalla nuova digitalizzazione del SUAP/SUE.
+Avendo partecipato a tutti i webinar finora organizzati da Invitalia ed avendo dato supporto ai nostri Enti nella compilazione dei bandi, abbiamo sempre inteso che la soluzione BackOffice Ente Terzo fosse da intendersi “modellata” sul singolo ufficio comunale coinvolto nel procedimento SUAP (Ufficio Tecnico, Commercio…), pertanto abbiamo dato indicazione ai nostri Enti che avrebbero potuto adeguare le nostre tre soluzioni proposte (Ufficio Tecnico, Commercio e Tributi) ognuna con un proprio BackOffice Ente Terzo.
+Essendo la nostra azienda in questa fase anche partner di Infocamere, spesso ci confrontiamo per allineare lo sviluppo dei nostri applicativi e monitorare lo stato di avanzamento.
+Recentemente, direttamente da InfoCamere, abbiamo ricevuto un’indicazione però leggermente diversa dallo scenario che finora pensavamo di adottare. Infocamere prevede la soluzione BackOffice Ente Terzo come unica a livello di Ente e non suddivisa in più componenti (come previsto dal bando), utilizzando tale soluzione unica come hub (o aggregatore / middleware) e demandando alle soluzioni verticali la gestione “autonoma” del procedimento riguardante l’ufficio di competenza (tecnico, commercio…).
+Questo perché il catalogo viene configurato individuando, per l’Ente, un’unica componente di BackOffice Ente Terzo e pertanto, se si volesse ulteriormente specificare, l’Ente dovrebbe accreditare i differenti uffici e per ogni procedimento andare ad “agganciarli” (tenendo conto che ci sono migliaia di procedimenti per ogni Regione…).
+Beninteso che Infocamere non ha dato come infattibile la soluzione di un BackOffice Ente Terzo per ogni ufficio, ma sarebbe un sistema estremamente dispendioso sia in fase di configurazione iniziale ma anche (e soprattutto) in fase successiva di versionamento.
+L’adozione della soluzione BackOffice Ente Terzo Hub genera però le seguenti problematiche:
+In un Comune in cui è presente un applicativo XXX per l’U.T. ma in cui non è presente alcun applicativo per il commercio (caso in cui l’Ente riceva un numero davvero irrisorio di pratiche), XXX aveva consigliato l’adozione del BackOffice Ente Terzo per l’U.T. e la soluzione sussidiaria per il commercio. Chiaramente non è più uno scenario possibile
+In un Comune dove sono presenti due (o più) software house nascono due problemi:
+Chi fa la soluzione BackOffice Ente Terzo Hub?
+Definita la S.H. che farà il BackOffice Ente Terzo Hub, come si integreranno le applicazioni verticali? Con quali specifiche?
+Quello che starà “sotto” il BackOffice Ente Terzo Hub non sarà in alcun modo “tracciabile”: se dal punto di vista dell’architettura software diventa molto più semplice (il BackOffice SUAP dialoga con UN SOLO Backoffice Ente Terzo del Comune), il BackOffice SUAP non sarà però più in grado di individuare correttamente l’ufficio che ha fatto una specifica richiesta di integrazioni (ad esempio) ma tutte le richieste integrazioni dei vari uffici finiranno nello stesso calderone. Anche riguardando le specifiche tecniche, non ci sembra che questo fosse il desiderata";"Confermiamo le osservazioni fatte da InfoCamere in merito alle due soluzioni, le quale risultano entrambe fattibili.
+
+La soluzione HUB ET risulta essere una semplificazione da un punto di vista tecnico e organizzativo, poiché l'ET dovrà gestire e censire nel Catalogo/PDND solamente una componente informatica. Ciò implica anche un riferimento unico per i procedimenti che devono essere gestiti dall'amministrazione ET. Le componenti verticali sottostanti all'hub possono essere sviluppate in modo indipendente e non devono essere accreditate nel Catalogo e sulla PDND. L'HUB ET è responsabile di ricevere le istanze dei procedimenti e quindi di inviare le eventuali richieste di integrazione/conformazione, nonchè gli esiti finali delle istruttorie. Il routing interno verso i singoli uffici è demandato interamente alla singola amministrazione.
+
+L'altra soluzione invece prevede lo sviluppo di una componente per il singolo ufficio dell'ET, quindi nel presente scenario, avremo 3 componenti informatiche, una per ogni amministrazione competente registrata sul Catalogo e sulla PDND. Quindi la complessità in questo scenario si cela dietro l'accreditamento delle tre soluzioni software e la mappatura dei procedimenti specifici per ogni ufficio. Si ricorda che i procedimenti amministrativi registrati nel Catalogo sono specifici per ogni amministrazione competente, tale informazione è fondamentale per il BO SUAP che la usa per provvedere all'inoltro delle fattispecie dei procedimenti. 
+
+In conclusione, la scelta ricade su:
+ -  definire un'architettura più snella e semplice da gestire, mediante una soluzione unica (HUB ET), per cui però non è stata definita una logica di tracciamento e dispatching delle istanze tra i vari uffici sottostanti;
+ - definire un'architettura più organizzata che prevede lo sviluppo  e la gestione di una piattaforma specifica per ogni ufficio, tenendo in mente che nella fase iniziale è necessario effettuare una mappatura dei procedimenti di competenza.";n.a.
+352;10b9d7ac29034645a42a7b7535af254a;"come indicato su Gazzetta Ufficiale, abbiamo provveduto a scaricare all’indirizzo https://www.impresainungiorno.gov.it/web/regole-tecniche/schemi-xml-procedimenti la nuova modulistica edilizia (SUE), decreto-legge 29 maggio 2024, n.69 (‘DL Salva Casa’).
+Il modulo SCIA Edilizia (SUE_modulo_scia.xsd) fa riferimento a 3 tipi che dovrebbero trovarsi sul modulo comune (SUE_common_components.xsd) ma dei quali non troviamo alcun riferimento:
+
+newStatoLegittimoBaseType
+SanatoriaBaseType
+RelazioneTecnicaAsseverazioneConSanatoriaType
+
+Abbiamo provato a verificare sul repository GitHub ufficiale (https://github.com/italia/moduli-pa/tree/master/Moduli_PA/SUE) ma sono ancora presenti le vecchie versioni.
+Come possiamo ricevere il modulo comune corretto?";"Si precisa che AgID non ha più competenza sugli schemi XSD, pertanto, si rimanda al tavolo della semplificazione in qualità di soggetto preposto alla formalizzazione della modulistica standardizzata.
+Inoltre, la documentazione in oggetto della richiesta risulta essere gestita all'interno del sistema impresainungiorno, gestita da UnionCamere/InfoCamere.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+353;bb333ebb4df34e688f62d85fb75932b8;"Riguardo al et_to_bo.yaml nel CdssNotifyMessage ci chiedevamo che tipo di dato ci possiamo aspettare sia fornito in ""cdss_channel"".
+Ad esempio il link di accesso alla riunione su teams o webex?";"L'attributo ""cdss_channel"" riporta il canale di accesso che verrà usato per partecipare alla conferenza dei servizi in modalità telematica. Tale canale può essere un link di accesso alla riunione teams o webex.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+354;40e8ce5999284168bd3f6d8823ee627b;"Secondo la definizione di CdssNotifyMessage in et_to_bo.yaml è possibile avere degli oggetti in cui la proprietà ""event"" può assumere i seguenti valori: end_by_proceeding_time_expired, end_by_integration_times_expired, end_by_submitter_cancel_requested, integration_request_time_expired, cdss_convened (i primi quattro vengono ereditati da NotifyMessage).
+Se prendiamo il caso di un oggetto CdssNotifyMessage in cui event=cdss_convened (convocazione cdss), le altre proprietà (mime_type, cdss_admin_act_filename, cdss_channel e cdss_convocation) assumono un loro significato.
+Nel caso in cui event sia uguale a un valore ammesso diverso da cdss_convened (ossia quelli ereditati da NotifyMessage), le proprietà obbligatorie cdss_channel e cdss_convocation sembrerebbero logicamente scollegate dal tipo di evento.
+E' quindi effettivamente possibile ricevere degli oggetti di tipo CdssNotifyMessage con ""event"" diverso da cdss_convened e quindi con le proprietà obbligatorie cdss_channel e cdss_convocation?";"La classe CdssNotifyMessage eredita la struttura di base NotifyMessage e la estende definendo le proprietà indicate, le quali possono essere:
+ - integrate alle proprietà predefinite nella NotifyMessage, se non erano definite nella classe padre;
+ - sovrascritte (override) secondo la nuova definizione dell'attributo della classe figlio, se questo era già predefinito nella classe padre.
+
+Facendo un esempio concreto, la classe NotifyMessage riporta come ""event"" i seguenti valori:
+ - end_by_proceeding_time_expired
+ - end_by_integration_times_expired
+ - end_by_submitter_cancel_requested
+ - integration_request_time_expired
+La classe CdssNotifyMessage, che estende la NotifyMessage, definisce nuovamente l'attributo ""event"" riportando solamente il valore ""cdss_convened"" che sarà l'unico elemento accessibile.
+Gli altri attributi (""cdss_admin_act_filename"", ""cdss_channel"", ""cdss_convocation"") verranno integrati nella classe CdssNotifyMessage, estendendoli a quelli predefiniti in NotifyMessage.
+
+In caso di dubbi interpretativi sull'ereditarietà o altre funzionalità definite in OpenAPI 3, si consiglia di utilizzare Swagger, che offre un'interfaccia grafica e interattiva per esplorare gli oggetti definiti nelle interfacce.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+355;0d48352269e64cb39a2073abb5d58f14;"In caso di soluzioni multitenant quando arriva un send_instance dobbiamo per forza richiedere l'instanceDescriptor per sapere con chi si vuole comunicare.
+Con le nuove modifiche al PDND dobbiamo aggiungere l'id del chiamante alle nostre richieste. Quale ID dovremmo inserire come ID chiamante?
+In caso di soluzione regionale dovremmo inserire l'id della Regione XXX ma nel caso di multitenant non regionale? L'ID della PA sponsor? Non credo sia corretto.";"Analizzando la pagina di documentazione fornita da PagoPA ""https://docs.pagopa.it/interoperabilita-1/manuale-operativo/utilizzare-i-voucher"" vengono fornite le indicazione circa gli id da specificare nel JWT.
+In particolare, per rispondere alla presente domanda, è necessario analizzare i seguenti attributi:
+- aud: l'audience, ossia l'indicazione di quale servizio dell'erogatore il fruitore intenda consumare con il voucher. Il valore riportato è quello che l'erogatore ha inserito nella configurazione dell'e-service;
+- sub: il subject, in questo caso l'id del client che ha richiesto il voucher a PDND Interoperabilità;
+- client_id: l'identificativo unico del client del fruitore che ha richiesto il voucher a PDND Interoperabilità (corrisponde al sub);
+- producerId: l'identificativo unico dell'erogatore dell'e-service;
+- consumerId: l'identificativo unico del fruitore.
+Qualora una PA Sponsor registrata su PDND si prende in carico l'onere di erogare i servizi della soluzione multitenant, dovrà riportare i propri id per gli attributi client_id/sub e producerId.
+
+Nel caso in cui si volessero fornire ulteriori dettagli al fine di identificare il soggetto specifico che sta utilizzando la soluzione multitenant, si possono inserire maggiori dettagli che vanno inseriti nel ""digest"" della richiesta del token JWT compilando gli attributi definiti dal pattern AUDIT_REST.
+Il pattern AUDIT_REST nelle sue varie declinazioni consente all’erogatore di identificare la specifica provenienza di ogni singola richiesta di accesso ai dati effettuta dal fruitore.
+Le Linee Guida indicano che l’erogatore e il fruitore devono individuare i claim da includere nel JWT di audit “Agid-JWT-TrackingEvidence” e suggeriscono i seguenti dati che dovranno essere presenti nel token generato dal fruitore, per ogni richiesta effettuata:
+- userID, un identificativo univoco dell’utente interno al dominio del fruitore che ha determinato l’esigenza della request di accesso all’e-service dell’erogatore;
+- userLocation, un identificativo univoco della postazione interna al dominio del fruitore da cui è avviata l’esigenza della request di accesso all’e-service dell’erogatore;
+- LoA, livello di sicurezza o di garanzia adottato nel processo di autenticazione informatica nel dominio del fruitore.
+Procedendo in tal modo, una PA che riceve più richieste identificate dallo stesso producerId, potrà distinguere le varie amministrazioni che stanno accedendo ai loro servizi erogati consultando il claim introdotto da AUDIT_REST.
+(fonte: https://govway.org/documentazione/console/profiloModIPA/messaggio/audit/audit01/audit_schema/index.html).
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
 356;n.a.;"Necessità di pubblicare i servizi su PDND anche in una versione di test 
 Sempre in merito ai servizi da pubblicare da parte della nostra soluzione di Ente Terzo per Regione XXX all’interno del SSU, dovremo lasciare sempre attivi dei servizi di test per permettere agli sviluppatori dei BO SUAP che vogliono accreditarsi con noi di effettuare delle prove verso i nostri servizi (es. invio send_istance)? In questo caso le url dei servizi di test dove verranno pubblicate?";Si precisa che la componenete ET soggetta ai test dovrà dialogare solamente con la piattaforma di test e non sono previsti test di integrazione con gli altri componenti BO SUAP.;n.a.
 357;n.a.;"Versionamento procedimenti
@@ -4834,3 +4991,276 @@ Le chiamate da effettuare al Catalogo sono:
 385;n.a.;La BBTS testa esclusivamente componenti già censite come e-service in collaudo o anche componenti in ambiente di sviluppo ancora da censire?;Si invita a chiedere supporto a InfoCamere per gestire tale richiesta in qualità di gestore e sviluppatore della BBT;n.a.
 386;n.a.;Il token per poter effettuare chiamate alla BBTS viene rilasciato dal servizio di autenticazione PDND di Produzione?  ;Si invita a chiedere supporto a InfoCamere per gestire tale richiesta in qualità di gestore e sviluppatore della BBT;n.a.
 387;n.a.;Con qualche chiave pubblica si deve validare l’Agid-JWT-signature inviato dalla BBTS;Si invita a chiedere supporto a InfoCamere per gestire tale richiesta in qualità di gestore e sviluppatore della BBT;n.a.
+388;17371f5e03bf4465b368a9b45364fbb4;"Facendo riferimento alla specifiche del file et_to_bo.yaml per quanto riguarda il test che verranno effettuati dalla SBBT per operation ""/instance/{cui_uuid}/document/{resource_id}"" come sarà possibile testare il recupero di un documento identificato da ""cui_uuid"" e ""resource_id"", visto che non è preceduto da operation ""send_conclusion"" o ""request_integration""?
+Ipotizziamo che ci verranno forniti dei ""cui_uuid"" e ""resource_id"" prima del test per censirli come casi di test nel nostro applicativo. Confermate?";"I test case della BBT richiedono la definizione di precondizioni per garantire la corretta esecuzione dei servizi. Le operazioni sono eseguite in momenti specifici dei sequence diagram, e per assicurare la coerenza tra l'esecuzione del servizio e lo stato dell'instance descriptor, ogni test case include la configurazione preliminare di oggetti specifici.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+389;1d35e8df3df04e9d81d8766282435d6f;"Buongiorno, mi scuso in anticipo per l'errata classifica della richiesta, ma non ho trovato un argomento relativo alla suite di black box test.
+Abbiamo una questione rimasta appesa con la software house XXX e rimasta appesa durante l'ultimo incontro della community dei fornitori. Vi allego tutta la conversazione in modo da fornirvi quanti più elementi possibili.
+
+La prima richiesta è stata formulata in data XXX e recita: ""Durante l'esecuzione dei test della back-box, c'è un test (Bo To Fo) che esegue la seguente chiamata:
+instance/%81bc7d1a-10e5-11ee-be56-0242ac120013/document/avvio_vicinato.xml
+
+
+Il test dovrebbe verificare se il sistema gestisce la richiesta di un cui non esistente. Il cui richiesto è il %81bc7d1a-10e5-11ee-be56-0242ac120013
+Il problema è che l'URL chiamato contiene il valore %81 che è un valore sospetto e che i sistemi di sicurezza dell'api gateway identificano (giustamente) come malevolo e quindi bloccano la chiamata ancor prima di passarla ai servizi veri e propri.
+L'unica soluzione, documentata, è disabilitare tali sistemi di controllo e far comunque arrivare la chiamata ai servizi, in modo poi da gestire la risposta di errore corretta. Troviamo però un po' assurdo dover forzare il sistema, esponendolo così a rischi di sicurezza, solo per passare un test. Ovviamente se il parametro passato non contiene %81, ma è sempre un cui non esistente, il sistema risponde correttamente con un errore secondo le specifiche tecniche.
+
+
+Si resta in attesa di vostro sollecito riscontro.
+Grazie
+Saluti""
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Durante l'ultima community dei fornitori Infocamere c'è stato il seguente scambio verbale:
+""Il caso di test, prodotto da AgID, ha lo scopo di testare una bad request (errore 400). Nel caso in cui AgID ritenga che è opportuno adeguare il caso di test, siamo a disposizione per farlo.
+
+Osservazione di XXX:
+Lo scopo del test lo sappiamo e l'abbiamo anche riportato nella domanda.
+Il fatto che si parli di Agid come soggetto terzo, ci lascia un po' basiti.
+A noi non interessa entrare nelle logiche di chi disegna i test (Agid) e di chi li sviluppa (Infocamere). Vorremmo però sapere cosa fare: viene modificato il test usando un CUI differente o forziamo i sistemi Cloud introducendo una falla di sicurezza (a questo punto direi di interpellare ACN)?
+Se si decidesse di modificare il test, riuscite a darci un'indicazione della tempistica? Noi avremmo l'urgenza almeno di passare i test. Al momento siamo bloccati su diversi fronti senza poter far nulla.
+
+Nell'attesa di risposte, rimaniamo come sempre disponibili per una call, senza dover aspettare un mese per gli incontri di gruppo.
+Grazie
+Saluti""
+
+la risposta definitiva veicolata alla software house per iscritto è stata dunque la seguente:
+""La black box esegue le CURL con le request prodotte da AgID e verifica che la risposta del sistema sia uguale a quella definita da AgID. Pur comprendendo il dubbio condiviso, la modifica della request e della response di un caso di test è un'attività che rientra nelle competenze di AgID""
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Vi risparmio l'ulteriore commento ricevuto oggi dalla software house e chiedo il vostro aiuto per formulare una risposta che plachi un minimo gli animi.
+
+Grazie mille buona giornata";"La definizione della BlackBox test è condotta mediante il lavoro congiunto di AgID e InfoCamere, dove il primo soggetto ha il compito di definire i test case composti da precondizioni, richieste e risposte, mentre il secondo ha il compito di implementare tale piattaforma.
+Eventuali errori nei test case possono essere verificati solo mediante l'esecuzione degli stessi, eventuali problematiche vengono gestite tramite issue tra i due soggetti precedentemente menzionati.
+
+Circa la problematica in questione, si precisa che la soluzione è stata gestita ed è prossima alla sua risoluzione. Per testarlo, è necessario attendere l’aggiornamento della piattaforma da parte di InfoCamere.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+390;e47e681ff31040ed8ccc808900e18766;"Buongiorno,
+su indicazione di Infocamere vi inviamo un file con due segnalazioni sui contenuti della Black Box (test per ET).
+Nello specifico una incongruenza con la risposta al messaggio di errore per il caso di test ET_TC_021_2 rispetto alle specifiche.
+E la presenza di ""%"" negli uuid dei test. Errore corretto per BO ed FO, ma probabilmente non per ET.
+La richiesta ha carattere di urgenza.
+Grazie";"Le BBT sono state aggiornate rimuovendo il carattere speciale e le modifiche sono state gestite per i componenti FO, BO ed ET. Per testarlo, è necessario attendere l’aggiornamento della piattaforma da parte di InfoCamere.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+391;2f40e1f585174fd1a6a4d9304ce69356;"Per la consultazione dell'elenco dei test a cui verranno sottoposti gli Enti Terzi, è corretto consultare il branch approved01?
+In caso affermativo, bisogna consultare le specifiche nella cartella ""specifiche_approvate/specifiche_navigabili"" (https://github.com/AgID/specifiche-tecniche-DPR-160-2010/tree/approved01/specifiche_approvate/specifiche_navigabili)
+oppure quelle nella cartella ""specifiche_navigabili"" (https://github.com/AgID/specifiche-tecniche-DPR-160-2010/tree/approved01/specifiche_navigabili)?
+Nel caso di ""specifiche_approvate/specifiche_navigabili"" compare un insieme di test più ampio che include anche gli errori ""500"" rispetto all'insieme dei test definito in ""specifiche_navigabili"".
+grazie";"Per consultare le specifiche tecniche navigabili si rimanda al seguente link: https://github.com/AgID/specifiche-tecniche-DPR-160-2010/tree/approved01/specifiche_navigabili.
+Le specifiche presenti nella cartella ""specifiche_approvate"" riportano la versione pubblicata ufficialmente, ovvero, al momento, la versione presente nel branch ""main"".
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";n.a.
+392;aae72015ceb046b4b1d552f6044c09b2;"Buongiorno,
+stiamo eseguendo i test SBBT come ET.
+Per il caso di test ET_TC_037_1, dalla nostra analisi sembra che nella request ricevuta manchi il campo ""cdss_convocation"" sebbene sia riportato nel body della request presente nel report allegato e che riporto di seguito:
+
+{
+""cui"": {
+""context"": ""SUAP"",
+""progressivo"": ""100"",
+""data"": ""2025-07-18"",
+""uuid"": ""81bc7d1a-10e5-11ee-be56-0242ac120013""
+},
+""instance_descriptor_version"": ""1"",
+""event"": ""cdss_convened"",
+""cdss_channel"": ""Canale cdss"",
+""cdss_convocation"": ""2025-06-23""
+}
+
+A conferma di ciò, abbiamo temporaneamente reso il campo ""cdss_convocation"" non obbligatorio e il test ha avuto esito positivo. Tuttavia, da specifiche il campo dovrebbe essere obbligatorio.";"Confermiamo che l'attributo ""cdss_convocation"" è un campo obbligatorio e deve essere previsto per il test, coerentemente con lo schema descritto nelle Specifiche Tecniche, pertanto abbiamo verificato il testCase nell'excel delle BBT e confermiamo la sua coerenza con quanto atteso.
+Nell'esempio riportato abbiamo notato che la data della convocazione della CDSS è antecedente alla data di generazione del cui, questo potrebbe essere incompatibile con la generazione dell'oggetto Times e risultare nell'errore ""incorrect request input\""; vi invitiamo a fare un ulteriore test con una data congrua.
+Attendiamo un vostro ulteriore riscontro.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";"Richiedente
+Buongiorno,
+sia la data della pratica, che quella di convocazione della cdss, sono dati di input che riceviamo nella vostra request. Non sono imputati dal nostro servizio.
+Quindi ribadiamo che il problema, stante quanto dite, dipende proprio dal caso di test.
+
+Operatore"
+393;n.a.;"E' disponibile una corrispondenza della mappatura dei campi dell’oggetto CooperazioneSUAPEnte utilizzato nel web service SOAP PDDServiceEnte.wsdl?
+";Non è chiara la domanda e non sembra essere di pertinenza AgID;n.a.
+394;n.a.;"In particolare ci serve sapere in quale metodo e in quale elemento sono presenti le informazioni:
+ 
+
+Suap Competente
+
+<suap-competente codice-amministrazione=""c_a662"" codice-aoo=""BA-SUPRO""
+
+                                               identificativo-suap=""9470"">Suap di BARI in delega alla CCIAA di BARI</suap-competente>
+
+<ente-destinatario pec=""archiviogenerale.comunebari@pec.rupar.puglia.it"">UFFICI COMUNE DI BARI</ente-destinatario>
+
+ 
+
+Dati pratica
+
+        <oggetto-pratica tipo-procedimento=""SCIA"" tipo-intervento=""apertura"">comunicazione di inizio attività  commercio on line articoli </oggetto-pratica>
+
+        <protocollo-pratica-suap codice-amministrazione=""REP_PROV_BA"" codice-aoo=""BA-SUPRO"" data-registrazione=""2025-02-19+01:00"" numero-registrazione=""0045268""/>
+
+        <protocollo-ri ufficio-ri=""BA"" anno=""2025+01:00"" numero-protocollo-ri=""19962"" sotto-numero-protocollo-ri=""1000"" data-protocollo-ri=""2025-02-19+01:00""/>
+
+        <oggetto-comunicazione tipo-cooperazione=""SINOLTRO"">Trasmissione pratica n. 08997310720-19022025-1000 - SUAP 9470 - 08997310720 MIX UP S.R.L.S.</oggetto-comunicazione>
+
+        <testo-comunicazione>testo</testo-comunicazione>
+
+        <protocollo codice-amministrazione=""REP_PROV_BA"" codice-aoo=""BA-SUPRO"" data-registrazione=""2025-02-20+01:00"" numero-registrazione=""0045935""/>
+";Si precisa che AgID non ha più competenza sugli schemi XSD, pertanto, si rimanda al tavolo della semplificazione in qualità di soggetto preposto alla formalizzazione della modulistica standardizzata.;n.a.
+395;n.a.;"""legal_person"" negli e-service attuali a quale utente si riferisce? gli altri dati dell'impresa dove sono?";"Il ""legal_person"" deve riportare il CF o la partita IVA dell'impresa oggetto delle istanze del procedimento SUAP. 
+Si precisa che non sono previsti altri dati dell'impresa all'interno dell'oggetto InstanceDescriptor. ";n.a.
+396;n.a.;"nel e-service catalogo to ente terzo il metodo get instance_descriptor ha nella risposta:
+usecase _proceeding > fattispecie procedimenti avvviati contiene un array con n elementi.
+
+Questi corrispondono agli interventi precedentemente definiti nella KDB?
+
+per ognuno di questi è definito un file MDA differente?
+
+ 
+
+Dove si trovano fisicamente i file MDA?
+
+ ";"L'attirbuto usecase_proceedings riporta una lista di fattispecie dei procedimenti avviati tramite il procedimento SUAP. Ogni fattispecie è direttamente collegata ad un procedimento, il quale può essere primario o secondario. Un procedimento SUAP prevede l'attivazione di una fattispecie primaria a cui possono essere collegate altre fattispecie secondarie. Il collegamento e l'obbligatorietà di tali fattispecie secondarie è definita dall'entità endoproceedings.
+
+Il file MDA è assciato direttamente all'attributo instance e risulta essere unico per un procedimento SUAP. 
+
+Il file MDA, come ogni altra risorsa gestita nell'ecosistema SSU, viene persistito direttamente in ogni componente informatica SUAP e negli scambi (es. send_instance) vengono inoltrati solamente i riferimenti per richiedere l'accesso al file, mediante la GET /instance/{cui_uuid}/document/{resource_id}.";n.a.
+397;n.a.;"Quesiti tecnici
+ I test sulla black box dovranno essere certificati prima della data di scadenza del decreto di finanziamento (1/12/2025)?
+
+";Tale quesito risulta essere di pertinenza di InfoCamere in qualità di gestore e sviluppatore della piattaforma BBT;n.a.
+398;n.a.;Quesiti Tecnici:Gli e-service da testare sulla black-box devono essere pubblicati sulla piattaforma interoperabilità PDND?;Tale quesito risulta essere di pertinenza di InfoCamere in qualità di gestore e sviluppatore della piattaforma BBT;n.a.
+399;n.a.;Quesiti Tecnici:Il nome dei client che espongono gli e-service su PDND devono avere un nome specifico? ;La gestione dei client e la definizione del suo nome viene definita liberamente dall'amministrazione accreditata sulla PDND che deve erogare i servizi sulla stessa.;n.a.
+400;n.a.;Quesiti Tecnici:Quali sono gli e-service da testare sulla black-box rispetto agli interventi elencati nella tabella 1 dell'allegato 2 dell'avviso di finanziamento?;"Tale quesito risulta essere di pertinenza del DFP poiché vengono posti dei dubbi in merito agli avvisi di finanziamento. 
+Inoltre si precisa che i test che saranno presenti nella BBT sono definiti all'interno del paragrafo 8.6 delle Specifiche Tecniche.";n.a.
+401;n.a.;Quesiti Tecnici:I 47 interventi riportati nella tabella 1 dell'allegato 2 dell'avviso di finanziamento sono tutti e-service e quindi devono essere esposti come e-service sulla piattaforma interoperabilità PDND e testati sulla black box?;"Non vi è necessariamente una mappatura diretta tra interventi ed e-service.
+Gli interventi riportati negli avvisi di finanziamento SUAP definiscono le funzionalità che devono essere garantite dalle amministrazioni SUAP. 
+Differentemente, gli e-service sono i servizi che devono essere offerti dalle stesse attraverso la piattaforma PDND e devono essere validati mediante l'esecuzione delle BBT che accertano la conformità tecnica.
+
+Per chiarire ulteriori dubbi in merito, si consiglia di rivolgersi al DFP.";n.a.
+402;n.a.;Quesiti Tecnici:oppure solo i 25 interventi (3, 4, 5, 6, 7, 11, 13, 14, 22, 23, 24, 25, 27, 28, 36, 37, 38, 39 , 40, 41, 42, 43, 44, 45, 46) riportati nella tabella 1 dell'allegato 2 dell'avviso di finanziamento, sono e-service e devono essere esposti come sulla piattaforma interoperabilità PDND e testati sulla black box?;"Non vi è necessariamente una mappatura diretta tra interventi ed e-service.
+Gli interventi riportati negli avvisi di finanziamento SUAP definiscono le funzionalità che devono essere garantite dalle amministrazioni SUAP. 
+Differentemente, gli e-service sono i servizi che devono essere offerti dalle stesse attraverso la piattaforma PDND e devono essere validati mediante l'esecuzione delle BBT che accertano la conformità tecnica.
+
+Per chiarire ulteriori dubbi in merito, si consiglia di rivolgersi al DFP.";n.a.
+403;n.a.;Quesiti Tecnici: I test della suite di black-box dovranno essere fatti solo sui 25 interventi (3, 4, 5, 6, 7, 11, 13, 14, 22, 23, 24, 25, 27, 28, 36, 37, 38, 39 , 40, 41, 42, 43, 44, 45, 46) riportati nella tabella 1 dell'allegato 2 dell'avviso di finanziamento e quindi devono essere esposti solo questi come e-service sulla piattaforma interoperabilità PDND e testati sulla black box?;"Non vi è necessariamente una mappatura diretta tra interventi ed e-service.
+Gli interventi riportati negli avvisi di finanziamento SUAP definiscono le funzionalità che devono essere garantite dalle amministrazioni SUAP. 
+Differentemente, gli e-service sono i servizi che devono essere offerti dalle stesse attraverso la piattaforma PDND e devono essere validati mediante l'esecuzione delle BBT che accertano la conformità tecnica.
+
+Per chiarire ulteriori dubbi in merito, si consiglia di rivolgersi al DFP.";n.a.
+404;n.a.;Quesiti Tecnici: I restanti 22 interventi (1, 2, 8, 9, 10, 12, 15, 16, 17, 18, 19, 20, 21, 26, 29, 30, 31, 32, 33, 34, 35, 47) sono funzionalità interne agli e-service che saranno testate sempre  nella suite di black-box intrinsecamente ai test degli e-service o sono funzionalità che dovranno essere testate da Roma Capitale e attestate dal RUP con la regolare esecuzione?;"Non vi è necessariamente una mappatura diretta tra interventi ed e-service.
+Gli interventi riportati negli avvisi di finanziamento SUAP definiscono le funzionalità che devono essere garantite dalle amministrazioni SUAP. 
+Differentemente, gli e-service sono i servizi che devono essere offerti dalle stesse attraverso la piattaforma PDND e devono essere validati mediante l'esecuzione delle BBT che accertano la conformità tecnica.
+
+Per chiarire ulteriori dubbi in merito, si consiglia di rivolgersi al DFP.";n.a.
+405;n.a.;Confermate che tutti i metodi definiti nelle interfacce (FO,BO,ET) per il recupero delle risorse documento (/instance/{cui_uuid}/document/{resource_id}) devono ritornare il contenuto codificato base64 (come text/plain) e non già direttamente il contenuto in formato binario, quindi con aumento della dimensione trasferita?;L'operation indicata restituisce una stringa codificata in base64. Si riporta di seguito la documentazione dei OpenAPI 3 dove viene riportata tale indicazione: https://spec.openapis.org/oas/v3.0.3#data-types;n.a.
+406;n.a.;È compito della PA (o del soggetto che gestisce il SUAP per suo conto) fornirci la documentazione tecnica di riferimento e indicarci le azioni da intraprendere nel caso specifico? Come possiamo ottenere le informazioni identificative necessarie per compilare correttamente le chiamate API da e verso i vari SUAP?;La documentazione tecnica di riferimento è il documento delle Specifiche Tecniche SUAP di cui al DPR 160/2010.;n.a.
+407;n.a.;I SUAP hanno facoltà di personalizzare il tracciato tecnico generico?;Non è chiara la domanda;n.a.
+408;n.a.;"R: Blackbox
+Buongiorno,
+sollecito un sollecito del nostro sviluppatore.
+Siamo ancora bloccati con i test per il carattere % che, come fatto già presente più volte, viene interpretato dai sistemi API Gateway come richiesta malevole e quindi bloccata dai sistemi di sicurezza. Non possiamo bypassarla se non disattivando i sistemi di sicurezza.
+Ci era stato detto che Agid avrebbe esaminato la questione e quindi dato una risposta. E' passato un mese, siamo ancora in attesa...
+Mandiamo a voi perché non si è capito se la competenza è di Agid o Infocamere";"La problematica segnalata è stata gestita e abbiamo condiviso l’aggiornamento ad InfoCamere per l’adeguamento della BBT.
+Si segnala che è necessario attendere l'aggiornamento della piattaforma per testare i nuovi test case.";n.a.
+409;n.a.;"Buongiorno,
+inoltro la mia risposta a Invitalia (e per cc a ad Agid) quale tramite verso InfoCert, visto che non posso rispondere direttamente a InfoCert nonostante le innumerevoli richiesti di mettere a disposizione un sistema di supporto decente (come vedete il ticket iniziale è andato ""perso"")
+
+Come già specificato, la struttura Procedimento->UseCases è chiara.
+
+Sono i contenuti dell'archivio che sono spesso inutilizzabili.
+
+Stando sullo UseCase USEC-0001331 quello che sappiamo dal catalogo è: 
+
+UseCase ID: USEC-0001331 
+
+UseCase Descr: Comunicazione di cessazione dell'attività
+
+Proceeding ID: PROC-0001244
+
+Proceeding Descr: Comunicazione di cessazione dell'attività
+
+Da queste informazioni, come facciamo a sapere per quali attività deve essere usato tale usecase e quindi il relativo proceeding?
+
+A logica sembrerebbe riferito alla cessazione di qualsiasi attività, peccato che nel catalogo troviamo anche questo:
+
+UseCase ID: USEC-0001636 
+
+UseCase Descr: Comunicazione di cessazione dell'attività di estetista
+
+Proceeding ID: PROC-0001244
+
+Proceeding Descr: Comunicazione di cessazione dell'attività
+
+Ovvero un altro UseCase, specifico per estetista, e collegato allo stesso proceeding.
+
+Troviamo però anche questo:
+
+UseCase ID: USEC-0001572
+
+UseCase Descr: Comunicazione di cessazione dell'attività di Facchinaggio
+
+Proceeding ID: PROC-0001441
+
+Proceeding Descr: Comunicazione di cessazione dell'attività
+
+Ovvero uno usecase specifico per l'attività di facchinaggio ma che, a differenza di prima, è collegato ad un altro proceeding.
+
+Abbiamo poi i casi in cui non troviamo proprio lo usecase e relativo proceeding. Ad esempio, per l'attività di bed and breakfast (B&B) non troviamo nulla a catalogo. Sicuramente la casistica è presente, ma sotto quale voce?";"Si precisa che una fattispecie è sempre riconducibile ad un procedimento, che sia questa una fattispecie primaria o secondaria. Nell'esempio vengono riportati due fattispecie distinte di ""comunicazione di cessazione dell'attività"" che sono ricondotte allo stesso procedimento. Da un punto di vista tecnico è corretto, tuttavia, è necessario affrontare la questione con InfoCamere per chiarire la correttezza delle informazioni associate ai procedimenti all'interno del Catalogo.";n.a.
+410;n.a.;"Buongiorno,
+
+si riprende la mail di un mese fa per chiedere chiarimenti in merito alla relazione use-case e regime amministrativo.
+
+Proprio in questi giorni, ritornando su questa questione con il nostro team di sviluppo, sono riemersi i dubbi già evidenziati, ovvero capire perché il regime amministrativo è legato allo use-case e non al proceeding. Quale sarebbe la casistica in cui due use case differenti, collegati allo stesso procedimento, avrebbero regime amministrativo diverso? ///////////////////////////////
+
+vorrei un chiarimento sul Regime Amministrativo.
+
+So che è un argomento che è stato trattato e che, anzi, ha generato una modifica nello schema ER. Riguardando però lo schema, e riguardando le varie FAQ, non riusciamo a capirne la logica.
+
+Quello che non riusciamo a capire è perché il regime amministrativo è associato alla fattispecie e non al procedimento? Per noi sarebbe stato più logico che dato un procedimento questo fosse associato inequivocabilmente ad un preciso regime amministrativo.
+
+Per quello che vediamo nelle specifiche, invece, si potrebbero avere casi in cui uno stesso procedimento potrebbe essere gestito con regimi amministrativi differenti a seconda della fattispecie?
+
+Non riusciamo a trovare un caso reale e sensato. 
+
+Potreste darci delucidazioni in merito, magari fornendoci un esempio pratico di un caso di questo tipo?";"La scelta di spostare la relazione del regime amministrativo a livello di fattispecie anzichè a livello di procedimento è funzionale a garantire flessibilità e una corretta gestione dei regimi amministrativi.
+Volendo fare una esempio pratico, dato un procedimento ""Avvio esercizio di vicinato"", a cui si applica in genere il regime SCIA, se si definisce una fattispecie ""Avvio esercizio di vicinato con vendita di oggetti preziosi"", ad essa deve essere associato il regime amministrativo AUTORIZZAZIONE.
+
+In aggiunta di ciò, si precisa che è funzionale anche per definire 1-a-1 i controlli Schematron da applicare per le verifiche automatiche, pertanto, il regime amministrativo deve essere associato a livello di fattispecie per garantire tali controlli.
+
+Per ulteriori dettagli, si consiglia di chiedere supporto ad InfoCamere in qualità di gestore del Catalogo.";n.a.
+411;n.a.;"Buongiorno,
+
+vi giro la risposta di Infocamere ad un nostro quesito.
+
+Risposta chiara ma sconcertante: scoprire dal welcome kit della blackbox che il pattern di sicurezza non è quello indicato nelle specifiche.
+
+Visto che si parla di issue aperta, vorrei capire se la cosa è confermata. Visti i tempi mi sembra assurdo ci siano ancora dubbi su un elemento base come questo.
+
+Nel caso fosse confermata, mi piacerebbe capire chi sostiene i costi del dover rifare lo strato di sicurezza (implementato come da specifiche) e che impatto ha questo sulla scadenza del progetto.
+
+In ultimo, mi permetto di far presente che sarebbe forse il caso di mandare una notifica agli interessati se ci sono cambiamenti importanti come quello in oggetto.";"
+
+L'aggiornamento del pattern di sicurezza è legata ad una semplificazione introdotta dalla PDND la quale consente, mediante lo standard INTEGRITY_REST_02, di efficientare la gestione delle chiavi di sicurezza e le modalità di verifica delle firme digitali negli scambi che avvengono tra due Enti.
+
+Al fine di rendere ufficiale tale aggiornamento, è stata pubblicata:
+ - in data 11/06/2025 la seguente notizia: https://collaudo.suapsue.gov.it/news/?news_id=40
+ - in data 18/06/2025 la seguente faq: https://www.suapsue.gov.it/view-faq/?faq_id=267";n.a.
+412;994269fae9304dbb9aa3ea319e802b2d;"Per la pubblicazione dell'API del nostro ente terzo su PDND abbiamo necessità di conoscere quali tra i pattern di sicurezza bisogna applicare per:
+1) per la sicurezza del canale quale tra:
+ID_AUTH_CHANNEL_01
+ID_AUTH_CHANNEL_02
+2) sicurezza messaggio tra:
+INTEGRITY_REST_01 con ID_AUTH_REST_01
+INTEGRITY_REST_01 con ID_AUTH_REST_02
+
+Non abbiamo trovato su specifiche tecniche l'indicazione di dettaglio a noi necessaria.";"Fonte: https://www.agid.gov.it/sites/agid/files/2024-07/Linee_guida_interoperabilit%C3%A0PA_All2_Pattern_sicurezza.pdf
+
+Per la sicurezza del canale si evidenzia che è necessario applicare il pattern ID_AUTH_CHANNEL_01, poiché, come segnalato nel documento segnalato come fonte, il pattern ID_AUTH_CHANNEL_02 può essere applicato solo nel caso in cui il fruitore non possa accreditarsi alla Piattaforma Digitale Nazionale Dati per l’interoperabilità.
+
+Per quanto riguarda invece la sicurezza del messaggio, si evidenzia che è necessario invece adottare il pattern INTEGRITY_REST_02, come segnalato nella notizia pubblicata sul sito di progetto SUAP&SUE: https://collaudo.suapsue.gov.it/news/?news_id=40.";n.a.
