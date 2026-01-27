@@ -4862,7 +4862,7 @@ Nel contesto XXX, la Regione, su base normativa:
 Laddove un Ente Terzo (es: Provincia), preferisse usare una propria soluzione di Ente Terzo per ragioni interne (ad es. perché supporta funzioni specifiche di integrazione con le soluzioni di gestione documentale adottate presso l’Ente), è possibile:
 •	lasciare all’Ente Terzo la libertà di adottare la soluzione che preferisce
 •	permettere comunque alla Regione XXX di usare gli e-services del SSU per raccogliere le informazioni qualificanti i procedimenti (tracciati xml, esiti delle istruttorie) versionati su base normativa dalla Regione, anche laddove l’Ente Terzo usa una soluzione propria per integrarsi al SSU";Si conferma che una Provincia può decidere in qualità di Ente Terzo di utilizzare una propria soluzione software per gestire i procedimenti di suo interesse, ma in tale scenario l'ufficio risulta essere indipendente e non deve notificare o inviare alla Regione le informazioni qualificanti legati ai procedimenti gestiti, tuttavia l'unico obbligo rimane quello legato agli audit verso il Catalogo per la gestione degli stati dei procedimenti.;n.a.
-362;0;attualmente le specifiche tecniche non avendo il destinatario (es. l'ET destinatario nelle chiamate send_instance) non è possibile sapere se ho inviato correttamente a tutti gli enti la richiesta, soprattutto in caso di soluzioni multi-tenant. Quando verranno corrette le specifiche tecniche?;La presente segnalazione è stata gestita tramite issue Gruppo Tecnico e attualmente è in corso la sua lavorazione. Prevediamo attualmente la sua risoluzione per il branch approved02.;n.a.
+362;n.a.;attualmente le specifiche tecniche non avendo il destinatario (es. l'ET destinatario nelle chiamate send_instance) non è possibile sapere se ho inviato correttamente a tutti gli enti la richiesta, soprattutto in caso di soluzioni multi-tenant. Quando verranno corrette le specifiche tecniche?;La presente segnalazione è stata gestita tramite issue Gruppo Tecnico e attualmente è in corso la sua lavorazione. Prevediamo attualmente la sua risoluzione per il branch approved02.;n.a.
 363;n.a.;allo stato attuale si prevedono mesi e mesi di lavoro/uomo per le richieste PDND: ricade nel lavoro richiesto a Invitalia perchè amministrativo o meno? è prevista una soluzione da parte di PDND a breve (come auspicato dal dott. XXX) come permettere l'accesso ai privati (garantendo la concorrenza fra i fornitori) o trovando una soluzione per il caricamento massivo?;È necessario l'intervento di PagoPA.;n.a.
 364;n.a.;la PA sponsor dovrebbe prendersi le responsabilità per una soluzione multitenant di un'eventuale azienda che offre soluzioni di mercato?;È necessario l'intervento di PagoPA.;n.a.
 365;n.a.;attualmente la soluzione di BlackBox richiede l'esistenza di eservice progettati ad hoc per rispondere ai test e che non corrispondono al funzionamento reale (flusso di lavoro, una singola istanza per i test, ecc ecc). La cosa verrà risolta o dovremo implementare eservice ad hoc per superare i test?;"Si invita a chiedere supporto a InfoCamere per gestire tale richiesta in qualità di gestore e sviluppatore della BBT
@@ -5264,3 +5264,942 @@ Non abbiamo trovato su specifiche tecniche l'indicazione di dettaglio a noi nece
 Per la sicurezza del canale si evidenzia che è necessario applicare il pattern ID_AUTH_CHANNEL_01, poiché, come segnalato nel documento segnalato come fonte, il pattern ID_AUTH_CHANNEL_02 può essere applicato solo nel caso in cui il fruitore non possa accreditarsi alla Piattaforma Digitale Nazionale Dati per l’interoperabilità.
 
 Per quanto riguarda invece la sicurezza del messaggio, si evidenzia che è necessario invece adottare il pattern INTEGRITY_REST_02, come segnalato nella notizia pubblicata sul sito di progetto SUAP&SUE: https://collaudo.suapsue.gov.it/news/?news_id=40.";n.a.
+413;6c22a4ccc70f4bc295a2aeb480d1c0cf;"Come dobbiamo impostare gli eservice SSU considerando che ricevono ed erogano dati allo stesso tempo?
+Abbiamo chiesto al customer care della PDND ma la loro risposta è stata:
+--------------------------------------------------------------------------
+Buon pomeriggio,
+per rispondere al suo quesito la informiamo che la piattaforma non permette di avere un e-service che eroga e riceve dati in contemporanea, è necessario crearne uno che solo eroga e uno che solo riceve dati.
+Eventualmente suggeriamo di contattare AgID facendo presente facendo presente quali sono le vostre esigenze e chiedendo come potete comportarvi.
+
+Cordiali saluti,
+Team Assistenza PagoPA
+--------------------------------------------------------------------------
+Non ho trovato una sezione adeguata dove porre la domanda";"Buongiorno, a seguito di un confronto con PagoPA, si riporta quanto segue:
+------------------------
+A seconda della sensibilità del dato inviato o ricevuto, dunque scambiato tra le parti, si va a compilare una dichiarazione del rischio per ogni e-service prima della sua pubblicazione su PDND quando l'e-service in questione opera in regime di ""erogazione inversa"". In caso contrario, la dichiarazione del rischio viene compilata dal soggetto richiedente nel momento in cui redige la finalità di utilizzo di un e-service per cui ha inviato la richiesta di fruizione.
+Ad ogni modo, precisiamo che la valutazione della titolarità del dato deve essere svolta dall'amministrazione erogatrice, la quale dovrà valutare se i dati sensibili risiedono tra quelli trasmessi o quelli ricevuti durante la comunicazione con l'altra componente informatica.
+------------------------
+Un saluto.";"Operatore
+""Buongiorno,
+Stiamo analizzando la segnalazione fatta, sarebbe possibile fornirci maggiori dettagli riguardo i servizi a cui si fa riferimento, insieme ad esempi pratici per circoscrivere meglio la problematica?
+Anche leggendo la risposta di PDND, non risulta chiaro quale sia lo scenario in questione o la problematica.
+Un Saluto""
+
+Richiedente
+""Procedo con un esempio pratico: l'eservice BO2ET ha alcuni metodi in cui riceve dati (send_conclusions, request_cdss, request_integration) ma anche metodi con cui eroga dati (instance).
+Se io devo pubblicare il mio eservice BO2ET su PDND come dovrei registrarlo?
+Dovrei pubblicarlo come service che eroga dati (quindi, fra le altre cose, con analisi dei rischi a cura del fruitore dell'eservice) o che riceve dati (quindi, fra le altre cose, con analisi dei rischi a cura dell'ente)?""
+
+Operatore
+""Buongiorno, sono in corso le opportune verifiche con PDND sul quesito posto nel ticket.
+Un saluto."""
+414;75d5bf19d402421aa4caeb6a61bce90d;Abbiamo bisogno di una conferma: se un'istanza richiede il parere di N enti che utilizzano la stessa soluzione di ente terzo - nel nostro caso più gestori di ente parco che devono dare un parere su una stessa autorizzazione XXX - il BO SUAP manderà N send_istance diverse? in caso affermativo, le send_istance inviate alla stessa soluzione di ente terzo avranno quindi lo stesso cui_uuid?;"Il routing interno ad una piattaforma ospitante più componenti Enti Terzi deve essere gestito secondo le logiche 
+definite dal gestore di tale piattaforma. All'interno del Catalogo SSU i riferimenti di tali coponenti avranno logicamente lo stesso valore. 
+Sulla base di ciò, un Back-Office, non conoscendo i sistemi in uso dei vari componenti, invierà una send_instance per ogni Ente Terzo 
+individuato all'interno dell'instance-descriptor, pertanto, la piattaforma multi-tenant riceverà più richieste dei pareri, una per ogni 
+Enti Terzo incaricato. In questo scenario, tale piattaforma dovrà essere in grado di analizzare le richieste e inoltrarle ai singoli Enti competenti. 
+Ricevuta tale segnalazione, ogni singolo Ente Terzo dovrà essere in grado di inoltrare i suoi esiti finali o eventuali richieste di integrazione al BO.
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.";"Richiedente
+Quindi confermate che le diverse send_istance mandate ai rispettivi Enti terzi avranno lo stesso cui_uuid?
+Rispetto alle richieste di integrazione al BO inviate da un ente terzo, gli altri Enti Terzi riceveranno evidenza dell'integrazione effettuata dal FO?
+
+Operatore
+Confermiamo che il cui_uuid sarà il medesimo.
+Confermiamo inoltre che il BO notificherà l'istanza integrata a tutti gli Enti Terzi, non solo a chi ha richiesto l'integrazione."
+415;4349df3347ea4c50bde673e8c42b3c86;Se ente terzo riceve una send_istance che da verifiche effettuate su /instance_descriptor/{cui_uuid} dovesse rilevarsi di una fattispecie e/o di un ente non di competenza della componente Ente Terzo, come dobbiamo comportarci? come facciamo a comunicare al BO SUAP che tale istanza non è da noi lavorabile?;"Buongiorno,
+
+Per come sono progettate le attuali specifiche dell'Approved01, attualmente non è possibile per un ET comunicare in interoperabilità al BO la ""non competenza"" su una particolare fattispecie. 
+
+La problematica evidenziata nel ticket però è stata analizzata durante le lavorazioni delle specifiche dell'Approved02, pertanto in futuro sarà possibile utilizzare un canale dedicato alle comunicazioni tra componenti per gestire problematiche generali, e la casistica diventerà così gestibile in interoperabilità.
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+416;cdc8cffbc7524c96ab8b7ee71397c883;In data 06/08 Regione XXX ha effettuato richiesta di accesso al servizio di SBBT ma ad oggi non hanno ricevuto riscontro e quindi non abbiamo ancora l'accesso necessario ad effettuare le verifiche richieste. A chi possiamo far scrivere per avere l'accesso? grazie;"Buongiorno,
+
+Per una problematica di questo tipo, si suggerisce di contattare direttamente il servizio di assistenza di InfoCamere.
+
+Un Saluto";n.a.
+417;7b79bcb1811b4224b643ef553d5e18b2;"Buon pomeriggio, mi scuso in anticipo per l'errata classificazione della richiesta, ma purtroppo non ho trovato una sezione dedicata alla tematica SUE.
+A tal proposito, la software house Starch srl ci sottopone il seguente quesito:
+""Buongiorno,
+alla luce del PDF con le nuove specifiche tecniche per il SUE, chiediamo dove reperire la documentazione tecnica dei servizi (yaml). Il repository git usato per il SUAP non ci sembra aggiornato.
+Grazie
+Saluti""
+Restiamo in attesa di un vostro cortese riscontro che sarà nostra premura veicolare verso il relativo mittente.
+
+Grazie mille";"Buon pomeriggio,
+
+Gli artefatti tecnici richiesti, prodotti per l'ambito SUE, sono reperibili al seguente repository pubblico: https://github.com/AgID/SUE-allegato-tecnico
+
+Per completezza, riportiamo anche il link alle FAQ SUE, per rispondere ad eventuali ulteriori domande: https://www.agid.gov.it/index.php/it/domande-frequenti/sue
+
+Si notifica inoltre che sono in corso le necessarie valutazioni per implementare un canale UniTicket dedicato al SUE, in modo da indirizzare le future richieste di supporto legate a tale ambito.
+
+Un Saluto";n.a.
+418;18656281da264b7ba9edc61cd3e16317;Abbiamo un dubbio sui futuri sviluppi SSU in ottica SUE: la richiesta del riferimento telematico del BO/FO sarà richiesta sempre da /suap/... o ci sarà una chiamata ad hoc? Lo stesso dubbio lo abbiamo per gli enti terzi.;"Buon pomeriggio,
+
+In generale, gli e-service descritti all’interno dell’Allegato Tecnico SUE sono da considerarsi differenti da quelli del SUAP, dunque nuovi ed esposti su endpoint dedicati.
+
+Le operazioni di cui in particolare si fa richiesta nel ticket fanno riferimento alle seguenti presenti in Catalogo-SSU_Meta:
+/single-desk/{single_desk_id}/{single_desk_version}/frontoffice-system
+/single_desk/{single_desk_id}/{single_desk_version}/backoffice-system
+
+Tutti artefatti tecnici prodotti per l'ambito SUE sono reperibili per consultazione al seguente repository pubblico: https://github.com/AgID/SUE-allegato-tecnico
+
+Per completezza, riportiamo anche il link alle FAQ SUE, per rispondere ad eventuali ulteriori domande: https://www.agid.gov.it/index.php/it/domande-frequenti/sue
+
+Qualora vi sia la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Si notifica inoltre che sono in corso le necessarie valutazioni per implementare un canale UniTicket dedicato al SUE, in modo da indirizzare le future richieste di supporto legate a tale ambito.
+
+Un Saluto";n.a.
+419;948c9183e8444eb5b64defebcd4ab478;"Abbiamo rilevato eseguendo la suite di Black-box test che per superare i test relativi a richieste non completamente conformi viene richiesto che la componente accetti e rispondi in maniera del tutto conforme.
+Nello specifico viene richiesta la presenza, nella risposta, del token di integrity firmato anche in risposta a messaggi scartati (come ad esempio messaggi privi del token PDND), altrimenti il test viene considerato non superato. Ci riferiamo ai tipi di test TEST_ERROR_401_00x come per esempio ai seguenti case test sul componente FO SUAP FO_TC_133 o FO_TC_028_1.
+
+Vorremmo precisare che essendo tale meccanismo NON sicuro (firmare qualsiasi risposta), che ci esporrebbe a problemi di sicurezza, e che comporta anche un aggravio di attività da effettuare, a regime NON verrà applicato in ambiente di Produzione ma, l’infrastruttura di Regione XXX, derogherà a delle regole di sicurezza, che il modello di interoperabilità prevede, solo per traguardare la certificazione con tale servizio.
+
+Quanto riportato è stato segnalato per oppurtuna conoscenza anche a InfoCamere.";"Potreste chiarire a che tipo di vulnerabilità sareste esposti e quale aggravio operazionale dovreste affrontare?
+
+Facciamo presente che, a prescindere dal modello di interoperabilità, lo standard RFC 7807 (a cui il MoDI stesso si riferisce), oggi aggiornato con l'RFC 9457, obbliga il destinatario a gestire alla stessa maniera tutti i tipi di risposta di errore, indipendentemente dal loro status code (che può essere riportato anche all'interno del body della Response).
+
+Un Erogatore per firmare una risposta deve convertire il payload in una stringa di byte e sottoporla ad una funzione di hash (non invertibile) utilizzando un algoritmo come SHA-256 (le alternative sono SHA-384 e SHA-512). 
+L'hash così calcolato dovrà poi essere firmato utilizzando una delle chiavi RSA, identificata univocamente, appartenente ad un portachiavi associato all'e-service, garantendo così l'identità dell'erogatore.
+
+Considerata la procedura utilizzata per firmare una risposta, è possibile affermare che si tratta di una pratica sicura e robusta agli attacchi di tipo forza bruta e man-in-the-middle grazie a:
+	• gli algoritmi di hash della famiglia SHA-2;
+	• la firma basata sulla crittografia asimmetrica.
+	
+Per fornire delle numeriche circa la robustezza dallo SHA-256, se un malintenzionato volesse tentare di trovare una collisione, deve affrontare un problema di complessità pari a 2^128 operazioni. Ipotizzando che il soggetto in questione utilizzi un supercomputer in grado di effettuare 10^15 operazioni al secondo, ci vorrebbero circa 10^38 secondi (ovvero circa 10^31 anni) per eseguire tale attacco. Qualora invece volesse invertire l'hash, la complessità sale a 2^256 operazioni. 
+
+Infine, si precisa che la PDND offre un ulteriore protezione avanzata del voucher, utilizzando il DPoP (Demonstrating Proof-of-Possession) - lo standard IETF (RFC 9449) che rende un voucher (token JWT) inutilizzabile se sottratto, perché vincolato a una chiave pubblica posseduta dal chiamante.
+
+Per completezza, si riportano gli standard di riferimento utilizzati per garantire il processo di firma e verifica:
+	• RFC 8017 (PKCS #1): definisce le modalità di utilizzo dell’algoritmo RSA per la firma digitale;
+	• RFC 7518 (JSON Web Algorithms): specifica gli algoritmi di firma, come RSA e SHA-256;
+	• RFC 7517 (JSON Web Key — JWK): questo documento specifica il formato JSON per rappresentare le chiavi crittografiche, sia pubbliche che private.";"Operatore
+Buongiorno,
+la tematica evidenziata verrà sottoposta al Gruppo Tecnico per valutare la sua migliore risoluzione.
+Seguiranno aggiornamenti in merito.
+Saluti.
+
+Operatore
+Potreste chiarire a che tipo di vulnerabilità sareste esposti e quale aggravio operazionale dovreste affrontare?
+
+Facciamo presente che, a prescindere dal modello di interoperabilità, lo standard RFC 7807 (a cui il MoDI stesso si riferisce), oggi aggiornato con l'RFC 9457, obbliga il destinatario a gestire alla stessa maniera tutti i tipi di risposta di errore, indipendentemente dal loro status code (che può essere riportato anche all'interno del body della Response).
+
+Un Erogatore per firmare una risposta deve convertire il payload in una stringa di byte e sottoporla ad una funzione di hash (non invertibile) utilizzando un algoritmo come SHA-256 (le alternative sono SHA-384 e SHA-512). 
+L'hash così calcolato dovrà poi essere firmato utilizzando una delle chiavi RSA, identificata univocamente, appartenente ad un portachiavi associato all'e-service, garantendo così l'identità dell'erogatore.
+
+Considerata la procedura utilizzata per firmare una risposta, è possibile affermare che si tratta di una pratica sicura e robusta agli attacchi di tipo forza bruta e man-in-the-middle grazie a:
+	• gli algoritmi di hash della famiglia SHA-2;
+	• la firma basata sulla crittografia asimmetrica.
+	
+Per fornire delle numeriche circa la robustezza dallo SHA-256, se un malintenzionato volesse tentare di trovare una collisione, deve affrontare un problema di complessità pari a 2^128 operazioni. Ipotizzando che il soggetto in questione utilizzi un supercomputer in grado di effettuare 10^15 operazioni al secondo, ci vorrebbero circa 10^38 secondi (ovvero circa 10^31 anni) per eseguire tale attacco. Qualora invece volesse invertire l'hash, la complessità sale a 2^256 operazioni. 
+
+Infine, si precisa che la PDND offre un ulteriore protezione avanzata del voucher, utilizzando il DPoP (Demonstrating Proof-of-Possession) - lo standard IETF (RFC 9449) che rende un voucher (token JWT) inutilizzabile se sottratto, perché vincolato a una chiave pubblica posseduta dal chiamante.
+
+Per completezza, si riportano gli standard di riferimento utilizzati per garantire il processo di firma e verifica:
+	• RFC 8017 (PKCS #1): definisce le modalità di utilizzo dell’algoritmo RSA per la firma digitale;
+	• RFC 7518 (JSON Web Algorithms): specifica gli algoritmi di firma, come RSA e SHA-256;
+	• RFC 7517 (JSON Web Key — JWK): questo documento specifica il formato JSON per rappresentare le chiavi crittografiche, sia pubbliche che private."
+420;298bffe3aa714602af924740fb4279d2;Un Ente Terzo può aggiungere autonomamente procedimenti o altre risorse sul Catalogo? Se sì a quale livello? Faccio un esempio pratico: un ente X della Regione Marche che è competente per il procedimento Y potrebbe aggiungere una versione di Y a livello regionale in autonomia o dovrebbe chiederlo alla Regione Marche?;"Buongiorno,
+
+Considerando l'esempio fatto, la risposta è: un ente X della Regione Marche che è competente per il procedimento Y deve richiedere l'aggiornamento di Y alla Regione Marche, che è l'unica responsabile dell'inserimento dei procedimenti sul Catalogo.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+421;n.a.;"cornice di sicurezza interoperabilità
+Quale payload nel patterne AUT_REST_02 deve essere implementato per fruire/erogare servizi in un aggregatore regionale per conto di altri enti locali?";"Il pattern di sicurezza cui si fa riferimento immaginiamo sia ""AUTH REST 02"", un token di audit che estende il pattern AGID-JWT-TrackingEvidence (AUDIT_REST_01) aggiungendo la correlazione tra il voucher di autenticazione e il token stesso. 
+Indicazioni sui payload da utilizzare possono essere reperite consultando la documentazione ufficiale di PDND.";n.a.
+422;n.a.;"e-service Infocamere
+Nel payload del request cui
+usecase_procedings->instance cosa contiene esattamente
+
+1) L'intero modulo del procedimento che quindi potrà avere parti non compilate?
+2) Porzione di un modulo del procedimento legato alla fattispecie?
+
+In entrambi i casi come effettuiamo la validazione XSD?";"Consultando l'instance descriptor schema .yaml presente all'interno del repository GitHub è possibile constatare che usecase_proceedings è un array di fattispecie dei procedimenti avviati, dove, per ognuno di essi sono collegati i riferimenti al modulo digitale in formato xml chiamato ""instance"" , e i relativi validatori (xsd obbligatorio, schematron opzionale) referenziati nell'attributo ""form"".
+La validazione xsd è possibile utilizzando i validatori di cui sopra da applicare sul relativo modulo dicitale presente in ""instance"".
+
+";n.a.
+423;n.a.;"sequence diagram coinvolgimento enti terzi
+ci potete confermare che l'identificazione degli enti terzi coinvolti per ogni fattispecie è basato sulla amministrazione competente? 
+Se è così, basandoci sul sequence diagram, in caso di piu fattispecie che coinvolgono lo stesso ente terzo potrebbe capitare che questo riceva più chiamate che coinvolgono lo stesso cui?";Si, se l'ente terzo è competente su più di una fattispecie, ci aspettiamo riceva più volte la stessa pratica per poter esprimere un parere su ciascuna fattispecie di sua competenza.;n.a.
+424;n.a.;ci potete chiarire il contenuto dell'activity model?;"L'oggetto ""activity_model"" rappresenta il file MDA gestito nei procedimenti SUAP già esistenti e tale oggetto è stato integrato al fine di poter gestire il transitorio durante la fase di adeguamento alla nuova struttura.";n.a.
+425;n.a.;"instance descriptor schema
+Nell'instance descriptor il campo administrative_regime non è obbligatorio, tuttavia, sembra necessario nell'invio da parte del FO in sede di stacco CUI, come da voi chiarito nelle domande discusse il 10/02/2025. Come mai?";Malgrado non sia stato indicato attualmente come un attributo obbligatorio (required), si suggerisce di trattarlo come tale. ;n.a.
+426;n.a.;"e-service infocamere metodo retry: 
+Chiarimenti del 12/02/2025
+L'operation ""retry"" esposta dal FO al BO (""FrontOffice SUAP to BackOffice SUAP"") permette al BO di richiedere al FO la ritrasmissione di una chiamata perché sono state riscontrate delle incoerenze sui dati ricevuti. 
+Chiarimenti del 16/05/2025
+Le operazioni di retry vengono attuate nel caso in cui durante la fase di comunicazione tra due componenti si verifica un errore di comunicazione. L'operatore può richiedere la ritrasmissione dell'operazione indicando l'errore riscontrato.
+
+Non è chiaro quindi se il retry viene utilizzato per segnalare incoerenze sui dati, se si che tipi di incoerenze che non possano essere intercettate in sede di validazione, oppure su problemi di comunicazione generici.";"L'operazione di Retry mira a richiedere la ritrasmissione di una operation nel caso in cui si verifichino degli errori nel canale di comunicazione. Tramite la retry la componente segnala l'errore e il messaggio riscontrato nella comunicazione soggetta a tale problematica.  
+";n.a.
+427;n.a.;"Come è strutturata la ricevuta prodotta dal FO per il presentatore? 
+Qual'è la modalità di trasmissione della stessa?";"Nella descrizione dei documenti del GeneralIndex sono presenti i link offerti da """"impresainungiorno"""" per recuperare i relativi documenti presenti al suo interno.
+(ad esempio: ""ricevuta.xml"" -> https://www.impresainungiorno.gov.it/documents/155997/157492/SUAP-ricevuta-1.1.4.xsd/58b9d8e8-2b76-4b8b-adee-0cf9c2bbe04a). 
+
+Attraverso l'operation di ""notify_receipt"" messa a disposizione dal BO, è possibile trasmettere i riferimenti alla ricevuta (xml o pdf). 
+In seguito attraverso la get document (/instance/{cui_uuid}/document/{resource_id}) è possibile ottenere il documento completo.";n.a.
+428;n.a.;Come viaggia l'istanza del modulo strutturato compilata? Per intenderci, il modulo xml compilato, in quale campo di quale json va inserita? Come viaggia invece l'istanza del modulo NON strutturato?;"L'istanza viaggia attraverso l'operation di ""send_instance"", che riporta il riferimento all'instance descriptor dove al suo interno vengono riportate le porzioni di istanze, ""Instance"", per ogni fattispecie (usecase_proceeding).
+
+Si precisa che l'Instance è un modulo digitale in formato xml e in quanto modulo strutturato ha almeno il proprio validatore xsd obbligatorio. I riferimenti alle altre risorse non strutturate (es: attachments) sono sempre riportate all'interno dell'instance descriptor.";n.a.
+429;n.a.;"""Potreste chiarirci il contenuto del general index, in particolare specificarci l'ownership della creazione dei seguenti: RICEVUTA_XML
+RICEVUTA_PDF
+SUAP_XML
+SUAP_PDF
+SUAP_REA_START_XML
+SUAP_REA_UPDATE_XML
+SUAP_REA_END_XML
+COMUNICA_CUI_XML
+COMUNICA_CUI_PDF""";"Il GeneralIndex è un indice di allegati trasversali che prescindono dalle fattispecie di procedimento, per tale motivo riporta una lista specifica di tipologie di documento che non vengono invece gestite nell'InstanceIndex.
+ 
+Il GeneralIndex deve contenere almeno la ricevuta.xml/pdf perché tale documento viene rilasciato dal FO SUAP e viene inviato al BO mediante la notify_receipt. 
+
+Il documento SUAP.XML risulta essere uno dei possibili documenti che può essere scambiato durante la gestione di un procedimento SUAP e viene gestito tramite GeneralIndex.
+Si invita a recuperare gli altri documenti al fine di verificare la struttura prevista per ognuno di essi e a contattare InfoCamere per ulteriori dettagli circa struttura e contenuto.
+
+Suap_rea_start/update/end che vengono rilasciati dal sistema camerale qualora il presentatore avvia una pratica SUAP mediante la piattaforma ComUnica.";n.a.
+430;n.a.;"Nel descrittore dell'eservice et_to_bo.yaml è definita l'operation send_instance che contiene al suo interno l'array general_index
+con un elenco predefinito tramite enumeration di possibili allegati. Dove sono presenti gli altri allegati non inclusi nell'enumeration e diversi dagli xml presenti nel descrittore dell'istanza sul catalogo?
+Inoltre, dai diagrammi di  sequenza, si evince che tale metodo (send_instance) venga usato anche per l'invio di un'integrazione dal back office suap al  back office ente terzo, in tal caso dove sono presenti gli allegati integrativi considerato che dai diagrammi di sequenza non si evince in tal caso una chiamata al descrittore dell'istanza del catalogo?";"Si precisa che il general_index prescinde dalle fattispecie di procedimento e riporta una lista specifica di tipologie di documento che non vengono invece gestite nell'InstanceIndex. Nella lista del general_index sono riportati, per ogni tipologia di documento, sia l'oggetto in formato XML che PDF.
+
+La send_instance è il metodo utilizzato per trasferire le istanze presentate verso un ET. Come fatto in fase di presentazione, tale metodo viene adottato anche per la risposta di una richiesta di integrazione. Il documento integrato viene riportato nella lista dell'InstanceIndex. 
+Tuttavia, si precisa che sono in corso delle analisi di impatto per quanto riguarda l'integrazione e la conformazione dei documenti. Attualmente non è possibile aggiornare l'InstanceDescriptor e l'integrazione può essere condotta come un aggiornamento di un documento già presentato modificando le metainformazioni trasportate mediante l'InstanceIndex.
+";n.a.
+431;n.a.;"Il front office, a seguito di una richiesta di procedimento, dialoga con il catalogo metadati e compone l’instance descriptor, al quale attribuisce la versione iniziale (1). 
+
+A partire da questo momento:
+1 - Quali sono tutti gli eventi che comportano l’incremento del numero di versione?";"La variazione di stato e della versione dell'Instance Descriptor viene gestita dal Catalogo SSU, a fronte di un evento inviato dal BO SUAP sulla base dello state-diagram riportato al seguente link del repository GitHub: https://github.com/AgID/specifiche-tecniche-DPR-160-2010/tree/approved01/state-diagram.
+
+L'aggiornamento dei tempi procedimentali invece fa variare solo la versione dell'instance descriptor. ";n.a.
+432;n.a.;"Il front office, a seguito di una richiesta di procedimento, dialoga con il catalogo metadati e compone l’instance descriptor, al quale attribuisce la versione iniziale (1). 
+
+A partire da questo momento:
+2- Per ciascun evento, quale attore (componente) ha la responsabilità di effettuare l’incremento della versione?";"La variazione di stato e della versione dell'Instance Descriptor viene gestita dal Catalogo SSU, a fronte di un evento inviato dal BO SUAP sulla base dello state-diagram riportato al seguente link del repository GitHub: https://github.com/AgID/specifiche-tecniche-DPR-160-2010/tree/approved01/state-diagram.
+
+L'aggiornamento dei tempi procedimentali invece fa variare solo la versione dell'instance descriptor. ";n.a.
+433;n.a.;La request_correction, è una funzione che il front_office rende disponibile per permettere al Back-office SUAP di inoltrare una richiesta di integrazione solo documentale post ricevuta di una data istanza di procedimento ? oppure per permettere al Back-office SUAP di inoltrare una richiesta di correzione dal front-office di una data istanza di procedimento (come modifica dei dati dell'istanza già inviata tipo indirizzo, numero camere etc...) e cioè di regolarizzazione? c'è qualche deroga a riguardo (nelle regioni dove non è prevista la correzione a valle dello stacco della ricevuta ma un nuovo invio)?;"Si conferma che la request_correction è una funzione che permette al BO di inoltrare una richiesta di correzione al FO contenente una lista di fattispecie soggette a tale regolarizzazione e le relative problematiche da colmare. 
+Per quanto riguarda la domanda in merito alla deroga, si invita a porre tale quesito al DFP in qualità di responsabile dei bandi di finanziamento degli interventi SUAP.";n.a.
+434;n.a.;La richiesta di correzione si riferisce al dialogo FO-BO ed è intesa comunque come integrazione? ;La richiesta di correzione, riconducibile alla funzione request_correction, permette al BO di inoltrare una richiesta di correzione al FO contenente una lista di fattispecie soggette a tale regolarizzazione e le relative problematiche da colmare.;n.a.
+435;n.a.;La richiesta di integrazione si riferisce al dialogo FO-ET etc... ed è solo una integrazione documentale?;La richiesta di integrazione consente ad un ET di segnalare al BO eventuali difformità normative da colmare. Il BO raccoglie tutte le richieste di integrazioni inviate dagli ET e, al termine del tempo indicato nell'oggetto Times, redige una richiesta cumulativa da inviare al presentatore per mezzo del FO. Il presentatore potrà inviare la nuova documentazione di integrazione sempre per tramite del FO verso il BO e gli ET. Qualora tale documentazione non venga integrata, il procedimento terminerà con esito negativo.;n.a.
+436;n.a.;Se il SUAP che viene realizzato è unico BO, FO e ET, gli interventi che vanno in deroga (comunicazione BO-FO e FO-BO etc..) devono essere comunque realizzati nel caso di e-service e verranno testati in BBT suite?;Qualora si adotti un sistema monolitico (FO-BO) le comunicazioni tra i componenti FO e BO SUAP non devono essere realizzate poiché vengono gestite mediante canali interni e non tramite la PDND. Devono essere realizzati solamente gli interventi inerenti alla comunicazione con le altre componenti, ovvero ET, ComUnica e Registro Imprese. Le BBT già sono state predisposte sfruttando questo principio.;n.a.
+437;n.a.;Le specifiche riportate per la firma digitale sono CADES e XADES, la firma digitale PADES che mantiene il documento visibile e in formato .pdf (più semplice per le amministrazioni) non è ritenuta valida?;Si precisa che attualmente non è possbile utilizzare la firma CADES poiché il formato P7M non è gestito nell'approved01 ma verrà integrato nella prossima versione. Per tale motivo, i documenti gestiti dai SUAP possono essere firmati in PADES e XADES e avranno come formato rispettivamente il PDF e XML.;n.a.
+438;eedb5236bb124f8584a18f45aed989b3;Necessitiamo di conoscere un insieme di casi di test di tipo send_instace (cui_uuid) da poter utilizzare per chiamare il Catalogo SSU Metadata endpoint servers: - url: https://serviziweb.cl.infocamere.it/modi/rest/in/infocamere/sisu-casa-api/v1 description: Catalogo SSU Metadata endpoint e per chiamare il Catalogo SSU to EnteTerzo SUAP endpoint servers: url: https://serviziweb.cl.infocamere.it/modi/rest/in/infocamere/sisu-cagi-entiterzi-api/v1 description: Catalogo SSU to EnteTerzo SUAP endpoint Inoltre abbiamo bisogno di conoscere uno o più endpoint che operino come Backoffice SUAP erogati da uniocamere per poter completare il giro di test per il recupero di documenti di cui alla send_istance.;"Buon pomeriggio,
+
+Per il quesito di cui sopra, si suggerisce di contattare direttamente la piattaforma di supporto di Infocamere, in quanto detentrice del Catalogo SSU e dei relativi servizi esposti.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+439;2912e90f930b4bc0b866f6f69fbeb57b;"Oggi abbiamo fatto la richiesta request_cui alle ore 9:41:30 GMT (ore 11:41:30 del nostro fuso orario) e ci hanno risposto con 401_004 all'URL
+In coda inserisco i dettagli della richiesta e della risposta.
+Url ""vecchio"" (no modi): https://cagi.catalogocl.impresainungiorno.it/FrontOffice
+Url ""nuovo"" (sì modi): https://serviziweb.cl.infocamere.it/modi/rest/in/infocamere/sisu-cagi-frontoffice-api/v1
+Vorrei precisare che il pattern che indicate come non valido funziona correttamente su altri e-service (e.g. ANPR_C030), ovviamente non intendiamo lo stesso identico token ma lo stesso pattern, generato dallo stesso programma.
+
+Response content:
+{""code"": ""ERROR_401_004"", ""message"": ""invalid AgID-JWT-Signature token""}
+
+Response headers:
+Date: Wed, 24 Sep 2025 09:41:30 GMT
+GovWay-Message-ID: ba666c8e-620a-48f5-b822-7a22df86fd71
+GovWay-Transaction-ID: 1ee49501-9922-11f0-bc70-005056a2d0d3
+
+Request content:
+{
+""version"": 0,
+""municipality"": ""043024"",
+""usecase_proceedings"": [
+{
+""code"": ""USEC-0001316"",
+""version"": ""00.00.00"",
+""competent_administration"": {
+""ipacode"": ""C_IPA3"",
+""officecode"": ""C_O_CODE3"",
+""version"": ""00.00.00"",
+""description"": ""Ente Comune fittizio nazionale""
+},
+""instance"": {
+""ref"": ""FORM_PA_000013"",
+""hash"": ""8D754C5A3A3F21E07E9D1E06A67635E38CC3A16D82D1554E90873105B21FA7F3"",
+""alg_hash"": ""S256"",
+""filename"": ""formFile.xml"",
+""mime_type"": ""application/xml"",
+""activity_model"": {
+""ref"": ""FORM_PA_000013"",
+""filename"": ""formFile.pdf"",
+""hash"": ""A7C1EA36B58B1BAE1DCCFF618F1909887BC7B1E402F8CD39F733F9618B0B5F78"",
+""alg_hash"": ""S256"",
+""mime_type"": ""application/pdf""
+}
+},
+""form"": {
+""xsd"": {
+""code"": ""XSD-PA-MODULES-0000015"",
+""version"": ""01.00.00""
+}
+},
+""attachments"": [
+{
+""ref"": ""ATTAC-0002454"",
+""hash"": ""7a4f4d6643bdf99fc8fb65e5bb9d3983008ae46326cb498c1b6e4d54c356b06804099613f247f61abf60242cdfc9f791a642d9c26e87f533aa499eeab3d6fcfb"",
+""alg_hash"": ""S512"",
+""mime_type"": ""application/pdf"",
+""filename"": ""test_2454.pdf""
+},
+{
+""ref"": ""ATTAC-0003065"",
+""hash"": ""89f779efce4bb273db29dffa2225599ea8cfd719b58408060ca1d3aa4791483c9e17100af203c4d065311796f33c31d1f16c206210ee2903072c2bd32b96de5a"",
+""alg_hash"": ""S512"",
+""mime_type"": ""application/pdf"",
+""filename"": ""test_3065.pdf""
+}
+]
+}
+],
+""cui"": null,
+""legal_person"": ""GVRSMN98B16D451Z"",
+""times"": {
+""start"": ""2025-06-06"",
+""max_gg_proc"": 90,
+""max_gg_correction"": 5,
+""max_gg_admissibility"": 5,
+""max_gg_int_req"": 15,
+""max_gg_int_resp"": 15,
+""max_gg_concl_send"": 25,
+""max_gg_cdss_req"": 20,
+""date_cdss"": null
+},
+""administrative_regime"": {
+""id"": ""AUTORIZZAZIONE"",
+""version"": ""00.00.00""
+}
+}";"Buongiorno,
+
+Per il quesito di cui sopra, si suggerisce di contattare direttamente la piattaforma di supporto di Infocamere, in quanto detentrice del Catalogo SSU, del sistema Impresainungiorno e dei relativi servizi esposti.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+440;n.a.;"Nel descrittore dell'eservice et_to_bo.yaml è definita l'operation send_instance che contiene al suo interno l'array general_index con un elenco predefinito tramite enumeration di possibili allegati. Dove sono presenti gli altri allegati non inclusi nell'enumeration e diversi dagli xml presenti nel descrittore dell'istanza sul catalogo? Inoltre, dai diagrammi di  sequenza, si evince che tale metodo (send_instance) venga usato anche per l'invio di un'integrazione dal back office suap al  back office ente terzo, in tal caso dove sono presenti gli allegati integrativi considerato che dai diagrammi di sequenza non si evince in tal caso una chiamata al descrittore dell'istanza del catalogo?
+ ";"Si precisa che le richieste di integrazione prevede l'aggiornamento della risorsa in questione e non la presentazione di nuovi documenti. La motivazione alla base di tale apporccio è dipendente dall'immutabilità dell'InstanceDescriptor (deve mantenere i riferimenti agli oggetti inseriti in fase di presentazione). Tuttavia, possono essere presenti ulteriori risorse che  vengono referenziate all'interno dell'InstanceIndex e del GeneralIndex (creati localmente da ogni singola componente), nonchè, attraverso i metadati indicati in specifici servizi (es. send_conclusions).
+";n.a.
+441;n.a.;"Il servizio /send_instance di un ente terzo viene chiamato da un backoffice .
+A questo punto, tramite cui_uuid, l'ente terzo deve chiamare il catalogo per avere i dettagli della pratica e il backoffice per i file.
+Per chiamare il servizio /instance/{cui_uuid}/document/{resource_id} del backoffice è necessario avere l'url su cui è pubblicato.
+Lo otteniamo dall'aud del jwt?";"Utilizzando i servizi esposti dall'e-service catalogo-ssu_meta, è possibile recuperare ""id"" e ""versione"" dello sportello SUAP tramite la chiamata ""/suap/{municipality}""con cui è possibile recuperare l'oggetto  BOSystemEntity (path: /suap/{suap_id}/{suap_version}/backoffice-system; /suaps-bo-systems/{id_suap_list}). All'interno di BOSystemEntity è possibile reperire l'attributo ""e_service_to_et"" dove viene immagazzinato il riferimento all'e-service del BO pubblicato sulla PDND. Mediante tale riferimento, è possibile recuperare la URL dell'erogatore tramite le chiamate di interoperabilità offerte da PDND.";n.a.
+442;n.a.;"Il servizio /instance/{cui_uuid}/document/{resource_id} del backoffice richiede una bearerAuth.
+Per creare la client assertion è necessario avere il purposeId. Il purposeId normalmente è legato alla finalità associata alla richiesta di fruizione fatta all'erogatore, quindi nel caso di un ente terzo e n backoffice che lo chiamano, avremo n purposeId oppure è previsto un e-service unico per gestire le chiamate ai back office (recupero dei documenti, richiesta di integrazione, ...)?
+Se non è previsto un e-service unico per una provincia , ad esempio, questo significa che deve fare  richiesta di fruizione a tutti i suoi comuni (almeno) e il software deve memorizzare il relativo purposeId. Non pare fattibile.";"Il purposeId viene generato automaticamente dalla PDND a fronte della creazione della finalità, utile per la richiesta di fruizione di uno specifico e-service erogato da un'amminstrazione. Quindi sarà presente un purposId per ogni richiesta di finalità.
+";n.a.
+443;2196a5d4def34ab993cd8dde0655c111;"Si può richiedere il CUI con data precedente?
+Faccio un esempio pratico:
+Il cittadino inizia a compilare un pratica alle 23:50 del giorno 07/10/2025 e procede all'invio alle 23:59 del giorno 07/10/2025 ma il sistema, per un qualsiasi motivo, effettua l'invio alle 00:01 del giorno successivo cioè il 08/10/2025.
+Il CUI che data riporterà? Quella che gli passo all'interno dell'instance_status (cioè il 07/10/2025) o quella della chiamata (cioè l'08/10/2025)?";"Buongiorno,
+
+terminata la compilazione e l'invio della pratica, il Front-Office dovrà inoltrare al Catalogo l'InstanceDescriptor privo di CUI, impostando nell'instance_status il timestamp al momento del suo invio. 
+Ad ogni modo, il tempo riportato in questa fase non determina l'avvio del procedimento, poichè l'InstanceDescriptor si trova ancora allo stato Started. Il procedimento può essere ritenuto avviato nel momento in cui passa allo stato ""Presented"", a seguito della ricezione sul Catalogo dell'evento ""receipt_sended"" inviato dal FrontOffice. Successivamente, il BackOffice riceverà la notify_receipt, imposterà i tempi del procedimento (Times) e potrà avviare il processo di lavorazione delle istanze.
+
+Saluti";"Richiedente
+Non parlo della data ai fini della presentazione e dei tempi ma la data presente nel CUI che ricevo come risposta.
+Mi serve di sapere la data che viene riportata nel campo apposito all'interno del CUI, si tratta del campo ""data"" indicato nello schema delle openAPI e facente parte del cui insieme con context, progressive e uuid.
+
+Riformulo di nuovo la domanda: se nel giorno 10/10/2025 faccio una chiamata request_cui con un instanceDescriptor che come started ha 09/10/2025, quale data troverò nella data riportata nel campo apposito del CUI?
+
+Per maggiore chiarezza riporto da: https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/main/openAPI/catalogo-ssu_to_fo.yaml
+schemas:
+cui:
+type: object
+description: codice unico dell'istanza
+required:
+- context
+- data
+- progressive
+- uuid
+properties:
+context:
+title: contesto dell'istanza
+type: string
+data:
+title: data emissione cui
+type: string
+format: date
+progressivo:
+title: numero progressivo a rotazione annuale
+type: string
+uuid:
+title: UUID chiave del CUI
+type: string
+
+Operatore
+Il campo ""data"" presente all'interno dell'InstanceDescriptor verrà popolato col timestamp nel momento in cui viene generato e inviato al FrontOffice dal CatalogoSSU, come indicato in descrizione nello schema cui.
+"
+444;1df4d855617e4e478735aad708249bb0;"Riguardando le specifiche tecniche mi sono soffermato su questo aspetto che avevo interpretato all'inizio in maniera più elastica ed estensiva:
+[REQ_11] le cache locali DEVONO essere invalidate alle ore 23.59 di ogni giorno;
+[REQ_12] le cache locali DEVONO essere allineate ai contenuti del Catalogo SSU a partire dalle ore 00.30 di ogni giorno;
+
+Quindi dalle 23:59 alle 00:30 NON posso far presentare Istanze. Corretto?
+O in quella fascia oraria non posso affidarmi alle cache locali e devo richiedere i metadati aggiornati al Catalogo in tempo reale?";"Buon pomeriggio,
+
+stando a quanto indicato nei REQ 11 e 12, si conferma che il sistema non può utilizzare la cache in quella fascia oraria indicata, pertanto, devono essere attuate delle logiche per impedire l'utilizzo della memoria tampone e popolarla a partire dalle 00:30 del nuovo giorno.
+
+Un Saluto";n.a.
+445;8455ae144d5646978b2f31dfcf34f380;"Studiando i messaggi di errore per valutare le risponde più adatte da costruire in determinate situazioni ho trovato una possibile lacuna/errore.
+La risposta 200 richiede queste precondizioni (rif. https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/approved01/specifiche_navigabili/08_e-service%20del%20SSU/08_06/08_06.md ):
+- operation chiamata in coerenza con lo stato del processo SUAP
+- request conforme alla sintassi definita nell'IDL OpenAPI ed
+- dati inviati corretti rispetto agli schemi dati previsti
+
+Tuttavia non è chiaro come rispondere nei casi in cui ricevo una chiamata valida rispetto alle precondizioni 2 e 3 ma a cui non posso rispondere con 200.
+Mi spiego con un esempio:
+- Ricevo un send_instance correttamente formato (precondizioni 2 e 3) ma che fa riferimento a un'istanza che ho già registrato a parità di versione di instance_descriptor (quindi non è un'integrazione) o che fa riferimento a un procedimento diverso (quindi errata) cosa dovrei rispondere?
+
+In questo caso nessun messaggio di errore previsto nella documentazione permette di evidenziare chiaramente il problema.
+- 400_001 parla di errori formali: request non conforme alla sintassi definita nell'IDL OpenAPI
+- 401_* parla di errori nell'autorizzazione PDND
+- 404_001 parla di mancanza di una determinata risorsa: request resource_id non esistente per un procedimento identificato da un dato cui-uuidd
+- 412_001 non è una risposta prevista dal send_instance (e prevede solo un problema a livello di hash)
+- 416_001 non c'entra
+- 428_001 non è una risposta prevista dal send_instance (e prevede solo un problema a livello di hash)
+
+Situazioni simili potrei averle in altri contesti: se dovessi ricevere una richiesta di integrazione, una cancellazione d'istanza o qualsiasi altra chiamata per un'istanza che non mi è arrivata cosa dovrei rispondere?
+L'errore 404 non è previsto per quei casi ma solo per la mancanza di una risorsa intesa come documento (modulo, allegato, ecc ecc)";"Buon pomeriggio,
+
+In relazione alla sua domanda tecnica, si segnala la pubblicazione della seguente notizia sul sito SUAPSUE: 
+
+https://www.suapsue.gov.it/news/?news_id=50 
+
+In particolare:
+
+- è stato introdotto un nuovo codice errore HTTP 409 - Conflict, con lo scopo di gestire evntuali richieste ripetute delle stesse risorse;
+
+- sono stati rafforzati i controlli per i codici di errore tipo HTTP 404 - Not Found.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";"Operatore:
+Buon pomeriggio,
+
+la ringraziamo per la segnalazione, confermiamo che la problematica verrà analizzata e seguiranno aggiornamenti appena possibile.
+
+Un Saluto"
+446;c36e34f56c02458f8f52827216ca67e9;"In relazione alla presentazione del 'Soggetto Interessato' o Ente quarto, quinto...
+Vi chiedo se sia disponibile documentazione funzionale e tecnica.
+Mi sembra d'aver capito che il flusso non sarà individuato da un workflow o sequence diagram ben definito, in quanto i singoli BO decideranno a chi estendere una notifica in base ai loro processi interni, ma vorrei sapere:
+1. le specifiche delle API sono le stesse usate per gli ET? SendInstance, notify, etc sono le stesse? Se no, dove si possono recepire le specifiche dedicate? Quali sono i file?
+2. Ho capito che l'ET non sarà censito del catalogo SSU (associato alle fattispecie primarie e secondarie). Quindi i BO dovranno tenere le anagrafiche degli Enti Interessati da contattare per conto loro. Ma come si farà a recuperare le informazioni delle url dei backand di quei sistemi? Gli Enti Interessati dovranno registrare il loro BO in PDND? Dovranno certificare la soluzione informatica con la SBBT? Gli Enti dovranno accreditarsi?";"Buon pomeriggio,
+
+sono attualmente in corso di definizione con il Gruppo Tecnico i flussi e i servizi che dovranno essere offerti dai vari componenti al fine di consentire il coinvolgimento di nuovi Enti Terzi nelle fasi istruttorie dei procedimenti avviati. Seguiranno pertando degli aggiornamenti su questa tematica nei prossimi incontri.
+
+Possiamo intanto anticipare che le specifiche delle API saranno le stesse con gli ultimi servizi integrati. Tutti i nuovi artefatti possono essere consultati nel repository GitHub di progetto (https://github.com/AgID/specifiche-tecniche-DPR-160-2010), prendendo visione dei branch di lavoro creati per la gestione della Issue 203 e del branch mantaince002 (una volta approvate le modifiche dal Gruppo Tecnico).
+Il nuovo ET può non essere  inizialmente censito sul Catalogo nel momento del coinvolgimento, per questa ragione, sono stati definite delle nuove logiche per consentire il loro ingresso nel flusso istruttorio. I riferimenti di tali Enti non censiti potranno essere recuperati sempre dal Catalogo, consultando un'apposita  lista, e verranno automaticamente associati alla Soluzione Sussidiaria con accesso limitato alla gestione delle specifica fattispecie del procedimento in corso. 
+
+Un saluto";n.a.
+447;4a5d1150d570423d9b9502195f407dc1;"Siamo stati abilitati - come Regione XXX - alla SBBT di produzione.
+Stiamo provando a chiamare la API /sacs-exti/getValidationTestInstance con i parametri obbligatori.
+Ci viene richiesto un header denominato jwt ma non siamo a conoscenza del valore da inserire.
+Dal manuale welcome kit sembra che tale jwt sia da ottenere in seguito all'ottenimento del uuid_istance che dovremmo ottenere da /sacs-exti/getValidationTestInstance
+Aspettiamo una cortese risposta, per noi urgente in quanto non ci permette di accedere alla suite di test";"Buon pomeriggio,
+
+La presente segnalazione deve essere risolta da InfoCamere in qualità di gestore della piattaforma per i Black Box Test.
+
+Un saluto";n.a.
+448;6bc12b38adac409385309b6b9baeddf3;"Controllando il sequence-diagram-general ( https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/approved01/image/sequence-diagram-general.png ) al punto 35 viene inoltrata l'istanza corretta ma non c'è alcun modo per aggiornare l'instanceDescriptor. Questo significa che il nome del file aggiornato deve essere lo stesso dell'originale e, soprattutto, da quel momento in poi l'hash del file (o dei file) non è più corretto quindi risulterebbe inutile controllarlo da BO.
+Giusto o mi sfugge qualcosa?";"Buongiorno,
+
+si conferma che l'InstanceDescriptor è immutabile come scelta di design. Per gestire la comunicazione dell'aggiornamento di una risorsa a fronte di una richiesta di integrazione si deve utilizzare la struttura dati Instance-index che viene trasmessa mediante la chiamata send_instance. Tale oggetto verrà inoltrato verso gli altri componenti che potranno recuperare l'hash della nuova risorsa e accedere correttamente al file mediante la chiamata GET /instance/{cui_uuid}/document/{resource_id}.
+
+Un Saluto";n.a.
+449;15f11e46e92c431caf80e5b72ee243fd;"abbiamo l'instance descriptor per il procedimento 1283 e vorremmo verificare che il descrittore che produciamo sia corretto, invochiamo il servizio request_cui che ci risponde sempre in questo modo
+
+400 Bad Request
+{
+""code"": ""ERROR_400_001"",
+""message"": ""incorrect request input""
+}
+
+Abbiamo fatto molteplici intervenenti sul descrittore ma riceviamo sempre il messaggio "" incorrect request input "" ed è difficile se le correzioni ci avvicinano o ci allontanano dall'obiettivo
+
+domanda
+ci potreste dare un riscontro sull'instance-descriptor che inviamo al catalogo_ssu per sapere cosa manca e/o cosa correggere? in allegato trovi l'nstance-desctiptor-1283.json";"Buongiorno,
+
+analizzando la richiesta sembra esserci un problema con il payload inviato tramite la request_cui, in particolare, si nota che è presente un valore ""null"" associato all'attributo cui. La request_cui deve contenere un InstanceDescriptor privo del ""cui"" poichè questo verrà creato e restituito dal Catalogo all'interno dell'InstanceDescriptor che si riceverà nella risposta. 
+
+Si invita a fare un ulteriore tantativo rimuovendo l'attributo ""cui"". Qualora dovessero persistere ulteriori errori, si invita a contattare il supporto offerto da InfoCamere per risolvere le problematiche legate alla comunicazione con il Catalogo.
+
+Un Saluto";n.a.
+450;9a5ea5076f744f9f8435ca244b4a9fa4;"PREMESSA
+il FO deve validare tutti i procedimenti ""strutturati"" con gli XSD provenienti dal catalogo_metadati
+
+DOMANDA
+l'xml dell'istanza che inviamo al BackOffice: deve essere quello che abbiamo già validato con gli XSD forniti dal catalogo_metadati
+oppure è necessario trasformarlo in un xml validabile con l'XSD pratica_suap-2.0.0.xsd citato nella documentazione openapi AGID?
+
+In allegato trovate o screenschot del riferimento relativo all'openappi a pratica_suap-2.0.0.xsd
+
+Grazie in anticipo per il riscontro";"Buongiorno,
+
+si precisa che AgID non ha più competenza sugli schemi XSD, pertanto, si rimanda al tavolo della semplificazione in qualità di soggetto preposto alla formalizzazione della modulistica standardizzata oppure a InfoCamere in qualità del soggetto che espone la risorsa xsd, associata al SUAP XML, mediante la sua piattaforma Impresainungiorno.
+
+Un Saluto
+";n.a.
+451;6d4843a22dc64689a677186795e17459;"Nella lista degli interventi di adeguamento tecnologico dei sistemi informatici SUAP è presente l’ID47: ""Realizzazione verifica firme CADES o XADES apposte alle istanze presentate tramite la web-app per il presentatore"". Poichè l’accesso con SPID livello 2 ai sistemi “certificati” che compongono il SUAP/SUE Regionale FVG può automaticamente sopperire alla apposizione di firma elettronica, come da indicazioni CAD (art.65) e l'adesione ad una specifica che rende ""trusted"" un circuito in cui il FrontEnd si fa da garante (con accesso certificato) è sufficiente, chiediamo un chiarimento su quali siano le modalità ammissibili per applicare questo ""indirizzo generico"" e quali sono i formati di firma digitale tra PADES, CADES, XADES (o un loro sottoinsieme), che deve essere garantito all’utente e verificate da FrontEnd e poi in caso trasmesso verso gli altri componenti (BO, ET). Chiediamo inoltre:
+- quali sono gli artefatti della ""domanda SUAP"" che la specifica richiede siano firmati? Descrittore istanza, moduli, allegati? - si può far firmare una trasposizione documentale del contenuto del modulo o deve venire firmato il file xml dei moduli? Segnaliamo che gli xml sono file tecnici per un utente e non esiste, ad oggi, un foglio di style standard (ex. dal catalogo SSU) per venire visualizzati (vedi caso fattura PA).";"Buon pomeriggio,
+ 
+L'intervento ID47 serve per realizzare un sistema di verifica delle firme apposte a qualsiasi documento firmato presente nell'istanza, a prescindere dalle modalità di accesso del presentatore alla piattaforma.
+ 
+L'articolo 65 del CAD garantisce che un documento presentato in un sistema ""trusted"" mediante un accesso con SPID di livello 2 abbia la stessa validità di un documento firmato digitalmente. Si precisa però che le Specifiche Tecniche richiedono che tali documenti siano ad ogni modo firmati per garantire l'integrità degli stessi anche durante i vari scambi tra le diverse amministrazioni coinvolte, dove potrebbe venire meno la configurazione ""trusted"" sopracitata.
+ 
+Tutti i moduli digitali di una domanda SUAP devono essere firmati, anche una eventuale trasposizione documentale generata per una condivisione verso gli utenti.
+ 
+I formati di firma che devono essere garantiti sono il PADES e XADES, fin dalla versione approved01 delle Specifiche Tecniche, e CADES a partire dall'approved02, senza vincoli alcuni. Ogni Ente potrà utilizzare il formato che desidera in fase di firma, ma dovrà disporre di un tool di verifica per i 3 formati sopracitati per i documenti ricevuti.
+ 
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+ 
+Un Saluto";n.a.
+452;0cdfe2c69a444bd384fb7adc00334326;"	
+Buongiorno, sottoponiamo alla vostra cortese attenzione il quesito allegato avente come mittente la Software House XXX.
+Grazie mille";"Buon pomeriggio,
+
+si riportano di seguito le risposte ai tre quesiti posti nel documento allegato al ticket
+
+Un Saluto
+
+----
+
+RISPOSTA 1:
+Il numero di giorni espressi nell'oggetto Times sono giorni di calendario. 
+
+RISPOSTA 2: 
+Si conferma che max_gg_correction riporta il numero di giorni concessi al presentatore per inviare le istanze corrette. Per tale motivo, manca il campo relativo alla richiesta di correzione che deve essere inviata dal SUAP. Si segnala però che tale oggetto non sarà disponibile dall'approved01 poichè dovrà essere integrato e approvato durante gli sviluppi dell'approved02.
+
+RISPOSTA 3: 
+Si conferma la logica applicata sul conteggio dei giorni durante la sospensione dei tempi. A fronte di una richiesta di correzione, le date del procedimento devono slittare del numero di giorni concessi al presentatore per gestire la richiesta (si considera così il caso peggiore). Qualora il presentatore dovesse rispondere in 4 giorni anzichè 10, le nuove date devono essere aggiorate sottraendo i 6 giorni di scarto, per conteggiare solamente il tempo realmente usato per rispondere alla richiesta.";n.a.
+453;30d764c1f1d94a18b152a2a9d9eaef5f;"Buon pomeriggio,
+sottopongo alla vostra cortese attenzione la richiesta pervenutaci dalla Software House XXX:
+""Nell'ambito della gestione istruttorie per gli enti terzi chiediamo come fare/quali metodi utilizzare per recuperare le descrizioni dei tipi di documento collegati ai files allegati alle pratiche .
+Poniamo ad esempio un procedimento così definito:
+Procedimento: PROC-0001235 - Comunicazione di subingresso in esercizio di commercio di media struttura di vendita non alimentare
+Usecase: USEC-0001318 - 00.00.00 - Subingresso in esercizi di commercio di media struttura di vendita non alimentare con superficie totale lorda, comprensiva di servizi e depositi (es. magazzini), inferiore a 400 mq
+Per il quale sono stati trasmessi oltre al modulo principale, dei files così definiti:
+ATTAC-0002458 - 00.00.00 - copia attestazione versamento oneri, diritti e spese
+ATTAC-0002501 - 00.00.00 - ALLEGARE DICHIARAZIONE SUL POSSESSO DEI REQUISITI DA PARTE DEGLI ALTRI SOCI E COPIA DOCUMENTO DI IDENTITA' IN CORSO DI VALIDITA'
+ATTAC-0003059 - 00.00.00 - Procura delega
+ATTAC-0003066 - 00.00.00 - Ricevute pagamenti elettronici
+ATTAC-0003065 - 00.00.00 - Fotocopia di un documento di identita' del soggetto che conferisce la procura speciale
+Come faccio a recuperare queste descrizioni ?
+In altre parole, le informazioni che identificano univocamente gli allegati (ad es. ATTAC-0002458, version 00.00.00) non sembrano essere presenti sulle istanze che arrivano all'ente.
+
+Cordiali saluti""";"Buon pomeriggio,
+
+Le informazioni collegate ai procedimenti SUAP vengono recuperate dal Catalogo SSU utilizzando i servizi esposti dall'e-service ""catalogo-ssu_meta"". Che venga recuperato un ""proceeding"" (procedimento) o uno ""usecase-proceeding"" (fattispecie) o un ""attachment"" (allegato), questi condividono la stessa struttura di base, ovvero, il ""Generic Entity"" composto dai tre attributi riportati nella richiesta ""id"", ""version"" e ""description"", oltre alle altre informazioni specifiche di ogni oggetto.
+Qualora vi fossero dei problemi nel recupero di tali informazioni o eventuali dubbi in merito al dato ricevuto, si invita ad aprire una segnalazione ad InfoCamere, in qualità di soggetto preposto per lo sviluppo e la gestione del Catalogo SSU.
+
+Un Saluto";n.a.
+454;n.a.;"
+Abbiamo dei dubbi su come costruire le chiamate per la requst_cui e send_instance, di seguito dettagliamo un caso di esempio in modo da poter ricevere delle indicazioni pratiche e precise.
+Pratica SUAP con + procedimenti e + fattispecie:
+Procedimento P1 (strutturato) con 2 fattispecie primarie: - F1 - con endoprocedimento associato (E1) non strutturato - F2 senza endoprocedimento associato
+Procedimento P2 non strutturato con 1 fattispecie: - F3 con endoprocedimento associato E2 strutturato
+Avremo quindi 4 moduli (P1 strutturato, P2 non strutturato, E1 non strutturato, E2 strutturato) che insistono sulla pratica.
+Il modulo strutturato di P1 avrà XML (DOC1) + PDF (DOC2)+ P7M/PDF Firmato (DOC3), P2 non strutturato avrà solo il PDF (DOC4) + P7M/PDF Firmato (DOC5), E1 non strutturato avrà solo il PDF (DOC6) + P7M/PDF Firmato (DOC7) ed infine E2 strutturato avrà XML (DOC8) + PDF (DOC9)+ P7M/PDF Firmato (DOC10)
+Come dobbiamo costruire nella chiamata request_cui la sezione usecase_procindings:
+•	Dobbiamo inserire solo le fattispecie primarie o tutte?
+•	Quale documento dobbiamo inserire nella istance?
+•	quali documenti di questi sopra elencati dobbiamo inserire negli attachments?
+•	gli altri documenti inseriti nella pratica vanno inseriti negli attachments o solo poi nella send_istance?
+Nella send_istance come dobbiamo comportarci:
+•	quali documenti inserire nella istance_index e quali nel general_index oltre alla ricevuta XML?
+E' possibile avere un esempio pratico (sulla falsa riga di quanto sopra descritto) con i vari documenti inseriti nello specifico campo di riferimento? ";"Prima di risolvere i quesiti posti, si evidenziano le seguenti precisazioni:
+  - i documenti allegati devono essere tutti firmati, pertanto, se DOC2 e DOC3 sono lo stesso documento, è sufficiente allegare quello firmato;
+  - attualmente, nella versione approved01, non è possibile condividere file firmati in CADES perchè non è supportato il formato P7M. Si rassicura però che tale formato sarà integrato con il prossimo rilascio con l'approved02.
+
+Domanda: Dobbiamo inserire solo le fattispecie primarie o tutte?
+Risposta: Nell'instance descriptor devono essere inserite tutte le fattispecie e queste saranno presenti nell'attributo ""usecase_proceedings"". Le fattispecie presenti nella lista non evidenziano se queste sono primarie o secondarie, tale informazione potrà essere recuperata mediante i servizi del Catalogo SSU.
+
+Domanda: Quale documento dobbiamo inserire nella istance?
+Risposta: Nell'attributo ""instance"" deve essere inserito il modulo della pratica SUAP e il file MDA all'interno di ""activity_model"", relativamente alla fattispecie a cui sono associati.
+
+Domanda: quali documenti di questi sopra elencati dobbiamo inserire negli attachments?
+Risposta: All'interno dell'attributo ""attachments"" devono essere presenti tutti gli allegati obbligatori indicati nelle varie fattispecie.
+
+Domanda: gli altri documenti inseriti nella pratica vanno inseriti negli attachments o solo poi nella send_istance? quali documenti inserire nella istance_index e quali nel general_index oltre alla ricevuta XML?
+Risposta: Nella send_instance si distinguono due tipologie di allegati: quelli associati alle istanze e quelli trasversali. Gli allegati associati alle fattispecie, presenti in ""attachments"" saranno riportati all'interno dell'Instance-index; i documenti trasversali invece devono essere condivisi mediante il ""general_index"". 
+
+Di seguito si riportano una serie ordinata di chiamate verso il Catalogo per recuperare i metadati fondamentali per la costruzione dell'Instance Descriptor:
+Di seguito i passaggi principali per la costruzione dell'instanceDescriptor:
+1- recupero degli eventi della vita e della tipologia del procedimento amministrativo a partire dalla municipality invocando il path dell'OpenAPI meta ""/typologies-lifeevents?municipality={comune} ""
+2- recupero del procedimento SUAP invocando il path dell'OpenAPI meta "" /proceedings?typology={typology}&lifeevent={lifeevent}&municipality={comune}""
+3- recupero della fattispecie invocando il path dell'OpenAPI meta ""/proceeding/{proceeding_id}/{proceeding_version}/usecase-proceedings""
+4- recupero di eventuali endoprocedimenti invocando il path dell'OpenAPI meta ""/usecase-proceedings/{usecase_proceedings_id}/{usecase_proceedings_version}/usecase-proceedings""
+5- recupero del regime amministrativo (workflow): per ogni endoprocedimento recuperato a partire dalla fattispecie, il sistema deve recuperare l’elenco degli oggetti Times e Regimi Amministrativi associati alle fattispecie. Per determinare il Regime Amministrativo dell’Instance Descriptor, l’operatore di Front-Office dovrà identificare il regime più stringente. Il path da invocare è ""/proceedings-administrative-regimes/{id_proceeding_list}"" dell'OpenAPI meta
+6- recupero dei form (moduli) invocando il path dell'OpenAPI meta ""/proceeding/{proceeding_id}/{proceeding_version}/form""
+7- se il modulo è strutturato vanno recuperai i relativi validatori xsd e schematron invocando i seguenti path dell'OpenAPI meta ""/form/{form_id}/{form_version}/xsd"" e ""/form/{form_id}/{form_version}/schematron""
+8- recupero degli allegati per ogni fattispecie invocando il path dell'openAPI meta ""/proceeding/{proceeding_id}/{proceeding_version}/attachments""
+9- se gli allegati sono strutturati vanno recuperati i relativi validatori xsd e schematron invocando i seguenti path dell'OpenAPI meta ""/attachment/{attachment_id}/{attachment_version}/xsd"" e ""/attachment/{attachment_id}/{attachment_version}/schematron""
+10- recupero dell'amministrazione competente invocando il path dell'OpenAPI meta ""/proceeding/{proceeding_id}/{proceeding_version}/{municipality}/competent-administration "" 
+
+";n.a.
+455;n.a.;"Buongiorno,
+in data 27/10 abbiamo superato i test della BlackBox, si pone ora il problema di come procedere con lo sviluppo della nostra soluzione.
+Fatto salvo che il WebService ET in erogazione è stato completato, per lo meno nella sua interfaccia di comunicazione, volevamo capire come possiamo “simulare” il funzionamento delle componenti in fruizione che completano la soluzione. In particolare l’integrazione con:
+Catalogo dei Metadati - ATTIVO
+Comunicazione verso catalogo SSU (CATALOGO - GESTIONE ISTANZA - ENTI TERZI) - ATTIVO
+Comunicazione verso BackOffice SUAP (COLL - SSU BO to ET) - SOSPESO
+Per questi servizi abbiamo avevamo fatto richiesta di fruizione in ambiente di COLLAUDO di PDND, tuttavia l’ultimo (era da un po’ che non controllavo) risulta sospeso.
+Per quanto riguarda la consultazione del catalogo questa risulta essere autonoma dal resto, ma per le altre due, sarebbe necessario avere qualche aiuto da parte vostra per poter riuscire a simulare il flusso che deve compiere una pratica…
+Ricevo la mia pratica (e già qui mi servirebbe avere un CUI di test)
+Richiedo le informazioni legate alla pratica al catalogo SSU
+A questo punto dovrei richiedere al backoffice SUAP i documenti associati alla pratica (ma qui il servizio è sospeso)
+Nei primi due passaggi della SCIA semplificata, mi trovo già ad avere delle criticità notevoli, quali sono quindi le modalità operative per procedere con lo sviluppo se non abbiamo qualcosa di disponibile in area di test?
+Grazie";Si invita a riproporre tale quesito ad InfoCamere per affrontare tale tematica.;n.a.
+456;n.a.;"Il Frontoffice invia al catalogo il descrittore dell'istanza tramite REQUEST_CUI. In particolare, nel descrittore viene inviata la lista degli attachments della pratica: come si valorizza il campo ""ref"" di ciascun attachment? Inoltre, non sembra esserci alcun identificativo della risorsa in questa fase (""resource_id"").";"L'attributo ""ref"", presente anche nell'Instance Descriptor per un determinato documento, rappresenta il riferimento all'elemento dell'istanza relativo al procedimento. Tale valore, definito dal FrontOffice durante la creazione dell'InstanceDescriptor, può essere utilizzato per risalire al relativo ""resource_id"" che viene definito invece all'interno dell'""instance-index (instance-index-schema), necessario per il recupero del documento di interesse tramite il servizio ""/instance/{cui_uuid}/document/{resource_id}"". ";n.a.
+457;n.a.;"Quando il Frontoffice invia la pratica al Backoffice tramite SEND_INSTANCE, viene inviata una lista opzionale di instance_index. Come vanno valorizzati e da dove prendo il dato per i campi ""code"", ""ref"" e ""resource_id""?";"L'attributo ""code"" rappresenta il riferimento alla fattispecie presente nel Catalogo a cui è collegato il documento.
+L'attributo ""ref"", presente anche nell'Instance Descriptor per un determinato documento, rappresenta il riferimento all'elemento dell'istanza relativo al procedimento. Tale valore, definito dal FrontOffice durante la creazione dell'InstanceDescriptor, può essere utilizzato per risalire al relativo ""resource_id"" che viene definito invece all'interno dell'""instance-index (instance-index-schema), necessario per il recupero del documento di interesse tramite il servizio ""/instance/{cui_uuid}/document/{resource_id}"". ";n.a.
+458;n.a.;"Il Backoffice interroga a questo punto il catalogo per richiedere il descrittore della pratica. Come detto il descrittore non contiene il ""resource_id"" degli attachments. E' corretto?";"L'attributo ""resource_id"" è presente solo nell'instance index e si può risalire al documento nell'Instance Descriptor mediante l'attributo ""ref"" ad esso associato.";n.a.
+459;n.a.;"Per poter consultare gli attachment, ora il Backoffice deve interrogare il Frontoffice tramite il metodo INSTANCE, passando il valore ""resource_id"". Come va valorizzato questo parametro, dato che, come detto, non è contenuto nel descrittore dell'istanza? 
+
+";"L'attributo ""resource_id"" può essere definito liberamente, purchè questo risulti essere univoco  per erogatore e per cui.uuid, poiché verrà usato come chiave per il recupero di un documento mediante la chiamata ""/instance/{cui_uuid}/document/{resource_id}"". ";n.a.
+460;n.a.;"Il nostro quesito per l’incontro è il seguente:
+
+Facendo riferimento alla documentazione della GovLet SUAP https://github.com/link-it/govway/blob/3.4.x/resources/doc/govlet/SUAP/GovLet_SUAP.pdf
+
+Per la validazione del token Agid-JwtSignature è necessaria la chiave JWK. Dove potremmo trovare questo elemento?";"Si riporta di seguito un estratto del documento referenziato:
+""Richiesta – Token Agid-JWT-Signature
+Indicare il path sul file system della chiave, in formato JWK, utilizzata per la 
+validazione del token di integrità.
+Questa chiave è rilasciata dal kit di certificazione BBTS ed è disponibile anche su 
+PDND"".
+
+Per eventuali altri dubbi in merito si consiglia di chiedere informazioni ad InfoCamere in qualità di gestore e sviluppatore della piattaforma di accreditamento.
+";n.a.
+461;n.a.;"Buongiorno, avremmo la necessità di capire le relazioni tra i vari timer nella struttura :
+""time"": {
+  ""start"": ""2025-10-01"",
+  ""max_gg_proc"": 60,
+  ""max_gg_correction"": 10,
+  ""max_gg_admissibility"": 5,
+  ""max_gg_int_req"": 20,
+  ""max_gg_int_resp"": 15,
+  ""max_gg_concl_send"": 50,
+  ""max_gg_cdss_req"": 10,
+  ""date_cdss"": ""2025-10-20""
+}
+In particolare è possibile approfondire come si compongono i tempi totali del SUAP-BO rispetto ai tempi di completamento degli endoprocedimenti degli Enti terzi?";"I tempi indicati nella richiesta rappresentano il numero di giorni massimo che possono decorrere dalla data di inizio di un procedimento per gestire le varie fasi di lavorazione.
+I tempi sono definiti nello schema Times presenti nelle Specifiche Tecniche:
+ - max_gg_proc: numero di giorni limite a partire da start entro cui l'istanza deve concludersi
+ - max_gg_correction: numero di giorni limite a partire da start per la correzione a valle di un controllo formale
+ - max_gg_admissibility: numero di giorni limite a partire da start per la verifica di ammissibilità
+ - max_gg_int_req: numero di giorni limite a partire da start per la richiesta di integrazione degli enti terzi
+ - max_gg_int_resp: numero di giorni limite a partire da start per integrazione del soggetto presentatore
+ - max_gg_conf_req: numero di giorni limite a partire da start per la richiesta di conformazione degli enti terzi
+ - max_gg_concl_send: numero di giorni limite a partire da start per inoltro delle conclusioni degli enti terzi
+ - max_gg_cdss_req: numero di giorni limite a partire da start entro cui gli enti terzi possono richiedere conferenza di servizi sincrona
+ - date_cdss: data evetuale conferenza di servizi sincrona
+
+Tali tempistiche devono essere definite dal Back-Office, prima dell'avvio del procedimento. Nel sequence-diagram General, al passo 21, del branch approved01, è prevista la chiamata ""request_update_times"" dal BO verso il Catalogo SSU, il quale restituirà l'InstanceDescriptor aggiornato con i nuovi tempi procedimentali. Da questo momento, il procedimento può essere considerato avviato, allo stato ""presented"", e possono iniziare le fasi di lavorazione dello stesso.";n.a.
+462;29fbb5a150534a4bb3eaf6b43ebdb93f;Se l'ET riceve dal BO SUAP una notify con dati incoerenti (ad esempio: il CUI non è presente nel sistema dell'ET) è corretto come prassi che l'ET scarti il tracciato ritornando al BO l'errore con codice 400 ?;"Buongiorno,
+
+il codice di errore 400 deve essere inviato qualora il sistema riscontri un errore semantico nella richiesta. Considerato invece il caso pratico posto nel ticket, il sistema dovrà inviare una risposta riportando il codice di errore 404 (Not Found) perchè il sistema non riesce a ritrovare la risorsa indicata nella richiesta. Non si tratta quindi di dati incoerenti sintatticamente ma viene richiesta un'azione su una risorsa non esistente.
+
+Un  Saluto.";n.a.
+463;7488464a829f40d48792f66a4c549b73;A partire da una municipalità avremmo necessità di avere tutti i possibili enti terzi/amministrazioni competenti/altra definizione di quella municipalità. Esiste una chiamata alle openAPI che soddisfi la nostra esigenza? Non siamo riusciti a trovare l'eventuale combinazione di parametri.;"Buon pomeriggio,
+
+Le segnaliamo la seguente operation all'interno di Catalogo SSU - Meta :
+
+/proceeding/{proceeding_id}/{proceeding_version}/{municipality}/competent-administration
+
+Questa, a partire dal procedimento e dalla municipalità, permette il recupero dell'amministrazione competente per uno specifico procedimento.
+
+In alternativa, vi è la seguente chiamata bulk, sempre in Catalogo SSU - Meta:
+
+/proceedings-competent-administrations/{id_proceeding_list}/{municipality_list}
+
+Quest'ultima permette il recupero bulk delle tuple {procedimento,amministrazione competente,comune}, con tutte le versioni disponibili, per una lista di identificativi procedimento e di municipalità.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";"Richiedente: 
+Buon pomeriggio,
+se io volessi avere la lista degli enti A PRESCINDERE dalla lista dei procedimenti come potrei fare?
+Grazie
+
+Operatore:
+Buon pomeriggio,
+
+Da specifiche tecniche, la lista degli enti è collegata al procedimento, dunque non è previsto alcun metodo per recuperare tale lista a prescindere da esso.
+
+Un Saluto"
+464;c17fa6665d0b4c5ab78f76586bc9d6d7;"Chiedo scusa ma abbiamo trovato una incoerenza in una precedente risposta.
+
+Riporto la domanda:
+Se l'ET riceve dal BO SUAP una notify con dati incoerenti (ad esempio: il CUI non è presente nel sistema dell'ET) è corretto come prassi che l'ET scarti il tracciato ritornando al BO l'errore con codice 400 ?
+
+La vostra risposta iniziale era:
+il codice di errore 400 deve essere inviato qualora il sistema riscontri un errore semantico nella richiesta. Considerato invece il caso pratico posto nel ticket, il sistema dovrà inviare una risposta riportando il codice di errore 404 (Not Found) perchè il sistema non riesce a ritrovare la risorsa indicata nella richiesta. Non si tratta quindi di dati incoerenti sintatticamente ma viene richiesta un'azione su una risorsa non esistente.
+
+Tuttavia la notify non prevede la response 404 ma solo queste:
+""200"":
+$ref: ""#/components/responses/OKRequest""
+""400"":
+$ref: ""#/components/responses/BadRequest""
+""401"":
+$ref: ""#/components/responses/Unauthorized""
+""500"":
+$ref: ""#/components/responses/ServerError""
+""503"":
+$ref: ""#/components/responses/ServiceUnavaliable""
+
+Inoltre non compare nessun test nella SBBT per la casistica 404.
+Quindi, o farete una nuova versione dell'ET_TO_BO.yaml, oppure non possiamo far altro che restituire 400.
+
+Il nostro comportamento attuale per la Notify, in assenza del CUI sull'ET, è il seguente:
+- per la sola notify cdss convened, inseriamo il nuovo CUI e rispondiamo 200;
+- per tutte le altre tipologie di notify, rispondiamo 400.
+
+Si fa presente che abbiamo già passato i test SBBT con questa implementazione.";"Buon pomeriggio,
+ 
+confermiamo che qualora si dovesse riscontrare tale problema, se possibile, bisogna utilizzare il codice 404 Not Found; in alternativa, confermiamo che come soluzione alternativa è possibile utilizzare il codice 400 Bad Request.
+ 
+Si precisa inoltre che sono state apportate delle modifiche ai codici di errore per integrare i codici di errore 404 e il nuovo codice 409, come riportato nella seguente news pubblicata sul sito di progetto: https://www.suapsue.gov.it/news/?news_id=50.
+I servizi presenti nella versione approved01 sono stati adeguati per includere fin da subito i nuovi codici di errore.
+Richiamando sempre tale notizia, si conferma che non è necessario ripetere il test se sono stati già eseguiti correttamente con esito positivo.
+ 
+Un Saluto";n.a.
+465;4737157a351f41c19b68e581553262d4;In caso dovessimo cambiare un dato (Partita IVA) dopo aver superato la validazione Black Box come dobbiamo fare? Chiediamo la modifica? Facciamo una nuova validazione e sovrapponiamo description e componentName? Dobbiamo scegliere una nuova description e componentName?;"Buongiorno,
+
+Per il quesito posto, la rimandiamo al servizio di supporto di InfoCamere, in quanto gestore della piattaforma di accreditamento.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+466;b64dd21fca5c40db9f2efe6d45b04599;"Buongiorno, sottoponiamo alla vostra cortese attenzione i seguenti quesiti pervenuti sulla nostra piattaforma di ticketing:
+"".Abbiamo visto sulle OPEN API https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/main/openAPI/bo_to_et.yaml, https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/main/openAPI/et_to_bo.yaml e https://github.com/AgID/specifiche-tecniche-DPR-160-2010/blob/main/openAPI/catalogo-ssu_to_et.yaml quali sono gli scambi di documenti previsti. Si fa sempre riferimento a resource_id, sia per i documenti che fornisce SUAP sia per i documenti che l’Ente Terzo emette. Chi è l’owner di questi riferimenti? Nel caso in cui per i documenti generati dall’Ente Terzo (esempio per le chiamate di send_conclusion (positive_outcome oppure negative_outcome) dovessere essere l’Ente Terzo stesso a generare il resource_id come deve essere composto e quali controlli si dovrebbero fare per far sì che sia univoco per pratica?
+
+3. Sempre nelle OPEN API citate al punto 2 abbiamo visto che sia l’Ente Terzo che il BO SUAP mettono a disposizione rispettivamente un servizio retry per richiedere alla controparte una riesecuzione di una specifica operazione. Qual è lo scopo ed il funzionamento di questi servizi di retry?
+
+4. Dove possiamo trovare degli esempi concreti di request dei servizi che intercorrono tra BO SUAP ed Ente Terzo?""";"L'attributo ""resource_id"" può essere definito liberamente, purchè questo risulti essere univoco  per erogatore e per cui.uuid, poiché verrà usato come chiave per il recupero di un documento mediante la chiamata ""/instance/{cui_uuid}/document/{resource_id}"".  L'attributo ""resource_id"" è presente solo nell'instance index e si può risalire al documento nell'Instance Descriptor mediante l'attributo ""ref"" ad esso associato.
+Le Specifiche Tecniche non determinano le modalità con cui implementare i controlli di univocità. Si demanda pertanto l'individuazione delle modalità più opportune a chi implementa tali soluzioni.  
+
+Le operazioni di retry vengono attuate nel caso in cui durante la fase di comunicazione tra due componenti si verifica un errore di comunicazione. L'operatore può richiedere la ritrasmissione dell'operazione indicando l'errore riscontrato. Tale operazione non ha un effetto sui tempi del procedimento. 
+
+Per esempi di request dei servizi che intercorrono tra BO SUAP ed Ente Terzo si invita ad utilizzare uno swagger editor online (editor.swagger.io) per esaminare la composizione degli oggetti di ogni servizio.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.
+467;n.a.;Buongiorno, nel caso in cui in una istanza l'Ente Terzo coinvolto in un endoprocedimento invii una richiesta di integrazione/CDSS  quando i termini per le richiesta sono scaduti oppure invii una richiesta di convocazione di CDSS a valle di una richiesta di integrazione oppure invii l'esito quando i termini per la lavorazione della pratica sono già scaduti, che tipo di operatività si deve prevedere? Non si deve tener conto dei messaggi?;"Le comunicazioni fuori tempo massimo non sono gestite nelle Specifiche Tecniche ma vengono delineate solo le azioni previste all'interno dei tempi prestabiliti dalla Norma (definini nell'oggetto Times). 
+Da specifiche la richiesta di un convocazione di CDSS da parte di un ET non dovrebbe partire a tempi scaduti.";n.a.
+468;n.a.;"""Buongiorno con riferimento alla struttura struttura """"time"""": {
+ """"start"""": """"2025-10-01"""",
+ """"max_gg_proc"""": 60,
+ """"max_gg_correction"""": 10,
+ """"max_gg_admissibility"""": 5,
+ """"max_gg_int_req"""": 20,
+ """"max_gg_int_resp"""": 15,
+ """"max_gg_concl_send"""": 50,
+ """"max_gg_cdss_req"""": 10,
+ """"date_cdss"""": """"2025-10-20""""
+}
+abbiamo necessità di chiarimenti sui tempi di procedimento. In particoalre dove si trovano queste informazioni, a parte il valore max_gg_proc gli altri valori indicati con max_* sono tutti di derivazione normativa e quindi fissi per ogni procedimento di qualsiasi tipologia?""";"Il struttura presente nella Domando è un esempio per gestire i test case delle BBT. Il BO deve settare queste variabili, nel pieno rispetto della normativa,
+ in base alla tipologia di Procedimento che si sta avviando.";n.a.
+469;n.a.;"
+Stiamo adeguando il nostro verticale BO Suap ed i verticali per gli enti terzi, vorremmo sottoporvi alcuni dubbi:
+ 
+Volevamo una conferma che il progressivo e la data dell'oggetto ""cui"" rimangono le stesse per tutta la vita dell'istanza: in caso di richiesta correzioni o integrazioni con conseguenti ulteriori send_instance l'oggetto cui sarà identico a quello del primo invio, corretto?
+
+ Il campo che varia nel corso della vita della pratica è instance_descriptor_version che viene aggiornato dal catalogo ad ogni audit, corretto?
+
+ Nel sequence-diagram l'aggiornamento dei tempi viene effettuato solo sulla prima send_instance, corretto?
+   
+L' instance_descriptor contiene un array di usecase_proceedings dove sono identificate le fattispecie (primarie e secondarie) necessarie a quella determinata casistica, non sembra esserci un dato che ci consenta di capire direttamente quale sia il procedimento, possiamo dare per assunto che la prima fattispecie dell'array è la fattispecie primaria? Se così fosse, quindi, dovremmo scaricare i procedimenti della municipalità e verificare la fattispecie primaria a quale procedimento corrisponde?
+   
+Nel catalogo nazionale dei procedimenti tutti gli endoprocedimenti di un procedimento hanno la stessa amministrazione competente. Questo significa che nel caso non fossero rimappati a livello regionale/comunale il SUAP BO dovrà necessariamente avere una mappatura che associa a ciascuna fattispecie la ""vera"" amministrazione competente.
+Come facciamo a recuperare l'elenco di tutte le amministrazioni competenti (ipacode, officecode, version) associate ad una municipalità?";"Si, corretto. Il ""cui"" è un oggetto composto da proprietà come ""progressive"" e ""uuid"".
+Entrambi ""progressive"" e ""uuid"" restano invariati per tutta la vita dell'istanza. 
+
+No, l' ""instance_descriptor_version"" cambia nel momento in cui vengono aggiornati gli elementi dell'instance descriptor, non necessariamente a seguito di un singolo audit. (ad esempio, anche l'update_times  comporta un aggiornamento dell'instance descriptor)
+
+Il servizio del catalogo identificato nei sequence come ""request_update_times"" fa riferimento all'operazione ""update_times"" offerto al Back-Office SUAP dal Catalogo SSU. Questo servizio può essere richiamato più volte, in relazione alle varie esigenze di gestione del procedimento come richiesta di cdss, integrazione, eccetera.
+
+Non si può dare per assunto che la prima fattispecie dell'array di fattispecie sia quella primaria.
+Partendo dal presupposto che non è chiara la domanda posta, se l'obiettivo è recuperare la lista delle fattispecie secondarie associate ad una lista di usecase_proceedings, è possibile utilizzare il servizio /usecase-proceedings-endoproceedings/{id_usecase_proceeding_list}.
+Se invece l'obiettivo è recuperare l'anagrafica di un procedimento associato ad uno use_case, attualmente non è possibile farlo con l'approved01, ma è si evidenzia che di recente è stata gestita una issue a riguardo per l'approved02.
+
+La domanda sul catalogo si consiglia di inoltrarla verso InfoCamere.
+
+Riguardo l'ultima domanda, non è possibile scaricare tutte le amministrazioni competenti relative ad una municipalità. E' possibile invece recuperare le amministrazioni competenti per un dato procedimento e municipalità.";n.a.
+470;n.a.;"Alla domanda: gli altri documenti inseriti nella pratica vanno inseriti negli attachments o solo poi nella send_istance? quali documenti inserire nella istance_index e quali nel general_index oltre alla ricevuta XML?
+E’ stata fornita la seguente risposta: Nella send_instance si distinguono due tipologie di allegati: quelli associati alle istanze e quelli trasversali. Gli allegati associati alle fattispecie, presenti in ""attachments"" saranno riportati all'interno dell'Instance-index; i documenti trasversali invece devono essere condivisi mediante il ""general_index"".
+
+Avremmo quindi un nuovo quesito: i moduli XML delle fattispecie dove vanno inseriti visto che non sono degli attachments e non sono trasversali?";"Consultando l'instance descriptor schema .yaml presente all'interno del repository GitHub è possibile constatare che usecase_proceedings è un array di fattispecie dei procedimenti avviati, dove, per ognuno di essi sono collegati i riferimenti al modulo digitale in formato xml chiamato ""instance"" , e i relativi validatori (xsd obbligatorio, schematron opzionale) referenziati nell'attributo ""form"".
+La validazione xsd è possibile utilizzando i validatori di cui sopra da applicare sul relativo modulo dicitale presente in ""instance"".";n.a.
+471;n.a.;"Alla domanda: Quale documento dobbiamo inserire nella istance?
+E’ stata fornita la seguente risposta: Nell'attributo ""instance"" deve essere inserito il modulo della pratica SUAP e il file MDA all'interno di ""activity_model"", relativamente alla fattispecie a cui sono associati.
+
+Avremmo quindi un nuovo quesito: activity_model dove è definito? 
+E’ un attributo della pratica XML SUAP, oppure è una proprietà da inserire nella istance? 
+Ed in questo secondo caso, come andrebbe inserita?";"L'oggetto ""activity_model"" rappresenta il file MDA gestito nei procedimenti SUAP già esistenti e tale oggetto è stato integrato al fine di poter gestire il transitorio durante la fase di adeguamento alla nuova struttura.";n.a.
+472;n.a.;"L'endpoint /instance_descriptor/{cui_uuid} in catalogo-ssu_to_et.yaml restituisce uno schema InstanceDescriptor che rappresenta i procedimenti avviati. Nella definizione di ciascun allegato (attachments—campo sotto usecase_proceedings), non è presente un campo resource_id.
+
+Perché è un problema:
+L'endpoint /instance/{cui_uuid}/document/{resource_id} in bo_to_et.yaml richiede la presenza di un resource_id per poter recuperare il relativo documento tramite API.
+
+Senza il resource_id non è fornito nello schema dell'allegato, come possiamo recuperare le risorse?";"Le risorse gestite all'interno delle Specifiche Tecniche possono essere identificate nell'InstanceDescriptor mediante l'attributo ""ref"". Il suo valore viene definito dal FrontOffice durante la creazione dell'InstanceDescriptor e può essere utilizzato per risalire al relativo ""resource_id"" che viene definito invece all'interno dell'""instance-index (instance-index-schema), necessario per il recupero del documento di interesse tramite il servizio ""/instance/{cui_uuid}/document/{resource_id}"". 
+
+L'attributo ""resource_id"", quindi, rappresenta l'identificativo univoco, per erogatore e per cui.uuid, mediante il quale è possibile risalire al documento nell'Instance Descriptor mediante l'attributo ""ref"" ad esso associato.
+
+
+
+
+
+";"Richiedente
+Se abbiamo capito bene, tutti i riferimenti agli allegati presenti nell'InstanceDescriptor sono già presenti, nell'istanza.
+Ipoteticamente quindi non è necessario avere l'InstanceDescriptor per poter richiedere gli allegati al back office. Il necessario per richiedere questi allegati sono già nell'instance-index. E' corretto?
+Dato che non siamo ancora in grado di invocare servizi su PDND, sarebbe possibile avere un esempio verosimile di istanza ricevuta mediante /send_instance e del corrispettivo l'InstanceDescriptor?
+
+Operatore
+Si è corretto, per recuperare i documenti digitali è necessario essere in possesso del ""resource_id"" che è gestito all'interno dell'instance-index, creato da ogni singola componente per tracciare i documenti da essa gestiti (per ogni documento viene riportata la fattispecie e il ""ref"" della risorsa).
+Tuttavia, l'InstanceDescriptor risulta essere sempre un elemento importante perchè riporta l'insieme degli elementi che fanno parte di un procedimento SUAP. Per ogni fattispecie vengono riportate le istanze e gli allegati. Ogni elemento viene identificato dal suo ""ref"". 
+
+Per prendere visione invede del servizio ""/send_instance"" si consiglia di utilizzare Swagger.io o tool affini, invece per consultare un InstanceDescriptor ben formato, si consiglia di contattare InfoCamere in qualità di gestore del Catalogo"
+473;115747e3ff3f415682c0a95f0c6f52bd;"Buongiorno,
+vi scrivo per conto di Regione XXX che come ente Aggregatore ha partecipato alla misura PNRR 2.2.3 per fornire a tutti gli enti aderenti il Back Office Enti Terzi conformi alle specifiche tecniche indicate nel DPR 160/2010.
+Nel testare le chiamate ai servizi messi a disposizione da InfoCamere su PDND collaudo (nello specifico COLL - SSU BO to ET, CATALOGO - GETIONE ISTANZA - ENTI TERZI ) stiamo riscontrando degli errori sotto riportati . Infocamere ci suggerito di rivolgerci a voi.
+Di seguito quanto riscontrato.
+
+E-service “COLL - SSU BO to ET”: le chiamate di prova usando la risorsa “request_cdss” con body
+{
+""cui"": {
+""context"": ""string"",
+""data"": ""2025-12-01"",
+""progressivo"": ""001"",
+""uuid"": ""555555""
+},
+""operation"": ""send_conclusions"",
+""error"": {
+""code"": ""001"",
+""message"": ""messaggio""
+}
+}
+ritornano questo errore: {""code"": ""ERROR_400_001"",""message"": ""incorrect request input""}.
+Per questa API, come per tutte le altre, non abbiamo trovato sulla documentazione dei parametri di prova da utilizzare nelle chiamate.
+L’url che utilizzo è https://subocl.impresainungiorno.gov.it/bosuap/rest/et
+
+E-service “CATALOGO - GETIONE ISTANZA - ENTI TERZI”:
+le chiamate di prova usando la risorsa “instance_descriptor”
+ritornano questo errore: { ""code"": ""ERROR_404_001"", ""message"": ""resource not found""}
+le chiamate di prova usando la risorsa “audit” con body
+{
+""cui"": {
+""context"": ""0000001"",
+""data"": ""2025-12-01"",
+""progressivo"": ""0001"",
+""uuid"": ""55555""
+},
+""message"": ""instance_integrated_retrived"",
+""event_time"": ""2025-12-01T12:48:04.349Z""
+}
+ritornano questo errore {
+""code"": ""ERROR_400_001"",
+""message"": ""incorrect request input""
+}
+ritornano questo errore: {""code"": ""ERROR_400_001"", ""message"": ""incorrect request input""}
+Per questa API, come per tutte le altre, non abbiamo trovato sulla documentazione dei parametri di prova da utilizzare nelle chiamate.
+L’url che utilizzo è https://serviziweb.cl.infocamere.it/modi/rest/in/infocamere/sisu-cagi-entiterzi-api/v1
+
+Attendiamo un vostro gentile riscontro.";"Buon pomeriggio,
+
+notiamo che i quesiti posti fanno riferimento ai servizi offerti da InfoCamere, per tale motivo, sono loro gli incaricati a gestire e risolvere tale problematica verificando eventuali messaggi di errore e i dati gestiti dalle loro componenti. Purtroppo, non avendo a disposizione delle componenti di test, non possiamo replicare il test e verificare eventuali elementi correttivi.
+
+Ad ogni modo, riscontriamo che il primo body riportato nel quesito tecnico risulta essere errato, poichè è quello relativo al servizio ""retry"" e non ""request_cdss"" e al suo interno vi sono i seguenti errori:
+ - manca l'attributo ""requester_administration"";
+ - il context è semplicemente ""string"".
+Per eseguire la chiamata ""request_cdss"" è necessario un body composto dal ""cui"" e la ""requester_administration"".
+Si segnala anche che il ""progressivo"" e ""uuid"" tra i due servizi sono differenti ma supponiamo che si riferiscano allo stesso ""cui"".
+
+Inoltre, si segnala che nelle Specifiche Tecniche (approved01) c'è un typo (errore di battitura) per quanto riguarda il ""cui"" dove viene riportato come attributo obbligatorio  ""progressive"" ma come proprietà viene richiesto l'attributo ""progressivo"". Bisogna verificare con InfoCamere se è presente tale problematica. Nel mentre, poichè apparentemente non si riscontrano ulteriori errori in questo caso, si può eseguire un test usando l'attributo ""progressive"" per verificare se l'errore 400 dipende da questo.
+
+Un Saluto.";n.a.
+474;15863015817841c586d8e009c534df1c;"guardando il sequence-diagram-general si capisce che il metodo update_times viene invocato subito dopo il recepimento dell'istanza da parte del back office suap.
+Non è chiaro se questo metodo può essere invocato anche in altri momenti (vedi caso d'uso e quesiti allegati alla presente 20251211_TempiDelProcedimento.pdf)";"Buon pomeriggio,
+
+confermiamo che il metodo ""update_times"" può essere invocato in diversi momenti del ciclo di vita di un procedimento SUAP. I BPMN e i sequence-diagram delineano i momenti in cui tali tempi possono essere aggiornati per gestire eventuali sospensioni o interruzioni dettate dalla norma. La norma in questione, la Legge 241/90, definisce le tempistiche entro le quali le amministrazioni possono o devono interagire con le altre componenti e gestire i procedimenti. 
+Abbiamo consultato l'allegato al ticket e possiamo confermare che in ogni caso è corretto far slittare il tempo massimo per la gestione del procedimento quando sono previsti sospensioni o interruzioni dei tempi. Tuttavia, non possiamo definire in modo univoco quali attributi devono essere aggiornati poichè, come già detto in precedenza, la gestione dei tempi è definita dalla norma e il Back-office ha il compito di aggiornare l'oggetto Times per assicurare che la gestione delle tempistiche siano conformi con la legge. 
+Ad ogni modo, precisiamo che nei vari casi d'uso presenti nell'allegato, la gestione dei tempi della correzione non è stata gestita in modo corretto. Il ""max_gg_correction"" indica il tempo, a partire dalla presentazione della pratica, entro il quale il soggetto interessato può rispondere, ma nell'esempio tale tempista eccede i 5 giorni poichè la richiesta è stata inviata 2 giorni dopo l'avvio e la risposta è arrivata il 4 giorno (per un totale di 6 giorni).
+
+Un Saluto";n.a.
+475;016bc1f0372f4b7c8fd7ffe1da488837;"Buongiorno, sottoponiamo alla vostra cortese attenzione una richiesta pervenuta dalla software house Engineering:
+""Il dubbio che abbiamo riguarda l'aggiornamento delle tempistiche in caso di regolarizzazione e integrazione.
+
+Sappiamo che all'invio della pratica il FO Suap setta nell'instance descriptor:
+
+start
+max_gg_proc
+
+mentre il BO Suap setta nell'instance descriptor:
+
+max_gg_correction
+max_gg_admissibility
+max_gg_int_req
+max_gg_int_resp
+max_gg_concl_send
+max_gg_cdss_req
+
+Nei diagrammi del workflow su git (approved01) abbiamo che in caso di regolarizzazione si ha il reset dei tempi (quindi è come se fosse inviata una nuova pratica) e in caso di integrazione si ha il riavvio dei tempi (in questo caso è una sospensione e i tempi ripartono).
+
+Vogliamo capire se:
+
+nel caso di regolarizzazione:
+
+il FO Suap setta nell'instance descriptor:
+
+· nuova start con la data invio regolarizzazione
+· max_gg_proc (dovrebbe essere invariata)
+
+il BO Suap setta nell'instance descriptor le altre tempistiche (dovrebbero cmq essere invariate):
+
+· max_gg_correction
+· max_gg_admissibility
+· max_gg_int_req
+· max_gg_int_resp
+· max_gg_concl_send
+· max_gg_cdss_req
+
+
+nel caso di integrazione:
+
+il FO Suap setta nell'instance descriptor:
+
+· max_gg_proc aggiungendo al precedente il numero di giorni sospesi
+
+Ringraziandovi anticipatamente porgo cordiali saluti""";"Buongiorno,
+
+Lo ""start"" viene settato dal momento in cui il FO notifica al BO il rilascio della ricevuta (notify_receipt , sequence diagram General). Pertanto l'aggiornamento dei Times può avvenire a valle di una regolarizzazione, ma non modifica lo ""start"".
+
+Per l'integrazione, in linea di massima concordiamo sulla necessità di aggiornare il ""max_gg_proc"" con i giorni in cui il procedimento è stato sospeso (giorni che intercorrono dalla data di richiesta di integrazione inoltrata dal BO al FO, alla risposta fornita dal presentatore sul FO verso il BO).
+
+In generale la gestione dei tempi è definita dalla norma e il Back-office ha il compito di aggiornare l'oggetto Times per assicurare che la gestione delle tempistiche sia conforme con i regolamenti vigenti.
+
+Qualora vi fosse la necessità di ulteriori chiarimenti, la invitiamo a contattarci tramite il canale di messaggistica del ticket.
+
+Le comunichiamo inoltre che, in assenza di ulteriori richieste, il presente ticket sarà chiuso automaticamente dal sistema entro 7 giorni lavorativi.
+
+Un Saluto";n.a.

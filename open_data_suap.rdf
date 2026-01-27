@@ -30,8 +30,8 @@
             </dcatapit:Agent>
         </dct:publisher>
         <foaf:homepage rdf:resource="https://www.dati.gov.it/"/>
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-08-31</dct:modified>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-08-31</dct:issued>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dct:modified>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dct:issued>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcat:themeTaxonomy>
           <skos:ConceptScheme rdf:about="http://publications.europa.eu/resource/authority/data-theme">
@@ -78,7 +78,7 @@
 
         <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/ITA"/>
 
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-08-31</dct:modified>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-31</dct:modified>
 
         <dcat:keyword>SUAP</dcat:keyword>
         <dcat:keyword>Specifiche Tecniche</dcat:keyword>
