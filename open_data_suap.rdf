@@ -85,12 +85,12 @@
         <dcat:keyword>Misura 2.2.3</dcat:keyword>
         <dcat:keyword>PNRR</dcat:keyword>
 
-        <dcat:distribution rdf:resource="https://github.com/AgID/open-data/raw/refs/heads/main/SUAP_SUE_Richieste_di_Supporto_Open_Data.csv"/>
+        <dcat:distribution rdf:resource="https://github.com/AgID/open-data/raw/refs/heads/main/SUAP_SUE_Richieste_di_Supporto_Open_Data"/>
         <dct:subject rdf:resource="http://eurovoc.europa.eu/100204"/>
     </dcatapit:Dataset>
 
 
-    <dcatapit:Distribution rdf:about="https://github.com/AgID/open-data/raw/refs/heads/main/SUAP_SUE_Richieste_di_Supporto_Open_Data.csv">
+    <dcatapit:Distribution rdf:about="https://github.com/AgID/open-data/raw/refs/heads/main/SUAP_SUE_Richieste_di_Supporto_Open_Data">
         <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
 
         <dct:title xml:lang="it">Open Data SUAP/SUE - Formato CSV</dct:title>
